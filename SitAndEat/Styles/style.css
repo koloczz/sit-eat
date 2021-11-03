@@ -25,10 +25,10 @@ body {
 }
 
 .banner-container {
-    background-image: url("../Images/header-background.jpg");
+    background-image: url("../Images/possumWin.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 35vh;
+    height: max(35vh, 250px);
     width: 100%;
     position: relative;
 }
@@ -79,7 +79,7 @@ body {
     top: 0;
 }
 
-.navbar::-webkit-scrollbar, .navbar2::-webkit-scrollbar{
+.navbar::-webkit-scrollbar, .navbar2::-webkit-scrollbar, .flex-description::-webkit-scrollbar{
     display: none;
 }
 
@@ -129,7 +129,7 @@ main {
     background-color: #757575;
     margin-left: 5%;
     margin-right: 5%;
-    padding: 2%;
+    padding: 0% 2%;
     border: none;
     top: 0;
     position: relative;
@@ -139,20 +139,84 @@ main {
 }
 
 .content {
-    margin: 2% 0;
+    margin: 0 0 2% 0;
     background-color: white;
     padding: 2%;
     border-radius: 1em;
 }
 
+.flex-description {
+    padding: 0.5rem;
+    max-height: 20em;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.flex-description h1{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.flex-description img {
+    object-fit: cover;
+    width: 100%;
+    height: 15vh;
+    margin-top: 1rem;
+}
+
+.flex-description p {
+    margin: 0.5rem;
+    text-align: justify;
+}
+
+.reservation {
+    align-self: center;
+    background-color: tomato;
+    border-radius: 1em;
+    border: none;
+    padding: 0.5rem;
+    margin-left: 35%;
+    color: white;
+    box-shadow: 0.5px 0.5px 2px #111;
+}
+
 footer {
+    margin: 0 5%;
     position: relative;
-    bottom: 0;
+    top: 0;
+    background-color: #757575;
+    color: #fff;
+    display:flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
 }
 
 .footer-item {
-	margin: 10px;
-	padding: 5px;
-	background-color: #4e524e;
-	border-radius: 0.5em;
+	margin: 0 2%;
+	padding: 2%;
+	background-color: #000;
+	border-radius: 1em;
+}
+
+.float{
+	position:fixed;
+	width:40px;
+	height:60px;
+	bottom:20px;
+	right:0px;
+    opacity: 80%;
+	background-color:#fff;
+	color:#FFF;
+	border-top-left-radius:1em;
+    border-bottom-left-radius: 1em;
+	text-align:center;
+	box-shadow: 1px 1px 2px #111;
+}
+
+.float p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
 }
