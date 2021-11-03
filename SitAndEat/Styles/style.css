@@ -2,9 +2,35 @@ body {
 	display: block;
     padding: 0;
     margin: 0;
-	font-family: "calibri";
+	font-family: "Montserrat";
     background-image: linear-gradient(#a1a1a1, orange);
     color: #4a4a4a;
+}
+
+.brand-name {
+    background-image: url("../Images/logoV2.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nav-brand {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-right: auto;
+}
+
+#no-hover {
+    color: white;
+}
+
+.banner-container {
+    background-image: url("../Images/header-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+    width: 100%;
+    position: relative;
 }
 
 .active-content{
@@ -15,10 +41,11 @@ body {
     z-index: 1;
     width: 90%;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row;
+    flex-wrap: wrap;
     overflow-x: scroll;
     scrollbar-width: none;
-	justify-content: space-between;
+	justify-content: stretch;
 	list-style: none;
     background-color: #757575;
     border-bottom-right-radius: 1em;
@@ -27,18 +54,63 @@ body {
     margin-right: 5%;
 }
 
-.navbar::-webkit-scrollbar{
+.navbar2 {
+    bottom: 0px;
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    height: 59px;
+	display: flex;
+	flex-flow: row;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+	justify-content: stretch;
+	list-style: none;
+    background-color: #757575;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+.navbar::-webkit-scrollbar, .navbar2::-webkit-scrollbar{
     display: none;
 }
 
 .navbar-nav {
+    width: 100%;
     list-style-type: none;
 	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0.5%;
+    margin: 0;
+}
+
+.navbar-nav2 {
+    width: 100%;
+    list-style-type: none;
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 0.5%;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 0.25rem;
 }
 
 .nav-link,
 .navbar-brand {
-	padding: 1em;
+	padding: 1rem;
+    margin: 0 0.25em;
 	text-align: center;
     color: #fff;
     cursor: pointer;
@@ -50,20 +122,37 @@ body {
 }
 .nav-item:hover{
 	background-color: tomato;
-    border-radius: 15%;
+    border-radius: 1em;
 }
 
 main {
-	height: 90vh;
-	top: 82px;
-    background-size: cover;
-    background-position: center;
+    background-color: #757575;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 2%;
+    border: none;
+    top: 0;
     position: relative;
+    display:flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+}
+
+.content {
+    margin: 2% 0;
+    background-color: white;
+    padding: 2%;
+    border-radius: 1em;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
 }
 
 .footer-item {
 	margin: 10px;
 	padding: 5px;
 	background-color: #4e524e;
-	border-radius: 5px;
+	border-radius: 0.5em;
 }
