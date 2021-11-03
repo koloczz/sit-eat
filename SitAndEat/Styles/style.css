@@ -1,5 +1,16 @@
 :root {
+  /* Menu */
   --glowny-kolor-tla: #757575;
+  --glowny-kolor-czcionki-menu: #fff;
+  --hover-kolor-podswietlenia: tomato;
+
+  /* Main */
+  --glowny-kolor-tla-div: white;
+  --glowny-kolor-czcionki-div: #4a4a4a;
+  --gradient-kolor-tla: linear-gradient(#a1a1a1, orange);
+
+  /* Footer */
+  --kolor-tla-footer: #000;
 }
 
 body {
@@ -7,8 +18,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Montserrat";
-  background-image: linear-gradient(#a1a1a1, orange);
-  color: #4a4a4a;
+  background-image: var(--gradient-kolor-tla);
+  color: var(--glowny-kolor-czcionki-div);
 }
 
 .brand-name {
@@ -25,7 +36,7 @@ body {
 }
 
 #no-hover {
-  color: white;
+  color: var(--glowny-kolor-czcionki-menu);
 }
 
 .banner-container {
@@ -38,7 +49,7 @@ body {
 }
 
 .active-content {
-  color: tomato;
+  color: var(--hover-kolor-podswietlenia);
 }
 
 .navbar {
@@ -118,7 +129,7 @@ body {
   padding: 1rem;
   margin: 0 0.25em;
   text-align: center;
-  color: #fff;
+  color: var(--glowny-kolor-czcionki-menu);
   cursor: pointer;
   text-decoration: none;
   display: block;
@@ -127,7 +138,7 @@ body {
   color: #000;
 }
 .nav-item:hover {
-  background-color: tomato;
+  background-color: var(--hover-kolor-podswietlenia);
   border-radius: 1em;
 }
 
@@ -146,7 +157,7 @@ main {
 
 .content {
   margin: 0 0 2% 0;
-  background-color: white;
+  background-color: var(--glowny-kolor-tla-div);
   padding: 2%;
   border-radius: 1em;
 }
@@ -180,12 +191,12 @@ main {
 
 .reservation {
   align-self: center;
-  background-color: tomato;
+  background-color: var(--hover-kolor-podswietlenia);
   border-radius: 1em;
   border: none;
   padding: 0.5rem;
   margin-left: 35%;
-  color: white;
+  color: var(--glowny-kolor-czcionki-menu);
   box-shadow: 0.5px 0.5px 2px #111;
 }
 
@@ -194,7 +205,7 @@ footer {
   position: relative;
   top: 0;
   background-color: var(--glowny-kolor-tla);
-  color: #fff;
+  color: var(--glowny-kolor-czcionki-menu);
   display: flex;
   flex-flow: column;
   flex-wrap: nowrap;
@@ -203,7 +214,7 @@ footer {
 .footer-item {
   margin: 0 2%;
   padding: 2%;
-  background-color: #000;
+  background-color: var(--kolor-tla-footer);
   border-radius: 1em;
 }
 
@@ -214,8 +225,8 @@ footer {
   bottom: 20px;
   right: 0px;
   opacity: 80%;
-  background-color: #fff;
-  color: #fff;
+  background-color: var(--glowny-kolor-tla-div);
+  color: var(--glowny-kolor-czcionki-menu);
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
   text-align: center;
