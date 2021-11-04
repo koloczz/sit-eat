@@ -7,9 +7,24 @@
 		<link rel="stylesheet" type="text/css" href="Styles/style.css">
 		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="icon" href="Images/logoV2.png">
+        <script src="Scripts/main.js"></script>
     </head>
     <body onscroll="stickToTop()">
-        <script src="Scripts/main.js"></script>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close" onclick="closeModal()">&times;</span>
+                  <h2>Modal Header</h2>
+                </div>
+                <div class="modal-body">
+                  <p>Some text in the Modal Body</p>
+                  <p>Some other text...</p>
+                </div>
+                <div class="modal-footer">
+                  <h3>Modal Footer</h3>
+                </div>
+              </div>
+          </div>
         <header>
             <div class="banner-container">
                 <nav class="navbar">
@@ -32,7 +47,10 @@
                 <nav class="navbar2">
                     <ul class="navbar-nav2">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link reservation-button" onclick="showModal()">Make&nbsp;reservation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#name">Overview</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
@@ -45,24 +63,20 @@
             </div>
         </header>
         <main>
-            <div class="content">
+            <div id="name" class="content">
                 <section class="description">
                     <p><h2>Restaurant Name</h2>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla bibendum luctus eros. Morbi pulvinar erat sed nisl placerat imperdiet. Donec dignissim diam nunc, et fringilla purus volutpat vitae. Nulla et sodales mauris. In laoreet odio quis lacus sodales ornare. Cras tincidunt, nulla molestie molestie aliquam, ipsum leo maximus dolor, non facilisis magna ante sed metus. Vestibulum posuere ligula dolor, in semper massa ornare vel. Aenean vel porta leo. Maecenas at turpis in massa posuere fringilla a sit amet nulla. Etiam eu sapien non lectus rhoncus vulputate. In vel eros nisi. Nam eu nulla ut metus porttitor scelerisque. Mauris egestas lectus est, id dapibus mauris tincidunt feugiat. Nunc mollis, lectus ac semper laoreet, eros massa sagittis leo, nec dictum magna leo et lectus. Vivamus quis semper ligula, ac accumsan purus.</p>
                 </section>
             </div>
-            <div class="content">
+            
+            <div id="menu" class="content">
                 <section class="description">
                     <p><h2>Menu</h2>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla bibendum luctus eros. Morbi pulvinar erat sed nisl placerat imperdiet. Donec dignissim diam nunc, et fringilla purus volutpat vitae. Nulla et sodales mauris. In laoreet odio quis lacus sodales ornare. Cras tincidunt, nulla molestie molestie aliquam, ipsum leo maximus dolor, non facilisis magna ante sed metus. Vestibulum posuere ligula dolor, in semper massa ornare vel. Aenean vel porta leo. Maecenas at turpis in massa posuere fringilla a sit amet nulla. Etiam eu sapien non lectus rhoncus vulputate. In vel eros nisi. Nam eu nulla ut metus porttitor scelerisque. Mauris egestas lectus est, id dapibus mauris tincidunt feugiat. Nunc mollis, lectus ac semper laoreet, eros massa sagittis leo, nec dictum magna leo et lectus. Vivamus quis semper ligula, ac accumsan purus.</p>
                 </section>
             </div>
-            <div class="content">
-                <section class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla bibendum luctus eros. Morbi pulvinar erat sed nisl placerat imperdiet. Donec dignissim diam nunc, et fringilla purus volutpat vitae. Nulla et sodales mauris. In laoreet odio quis lacus sodales ornare. Cras tincidunt, nulla molestie molestie aliquam, ipsum leo maximus dolor, non facilisis magna ante sed metus. Vestibulum posuere ligula dolor, in semper massa ornare vel. Aenean vel porta leo. Maecenas at turpis in massa posuere fringilla a sit amet nulla. Etiam eu sapien non lectus rhoncus vulputate. In vel eros nisi. Nam eu nulla ut metus porttitor scelerisque. Mauris egestas lectus est, id dapibus mauris tincidunt feugiat. Nunc mollis, lectus ac semper laoreet, eros massa sagittis leo, nec dictum magna leo et lectus. Vivamus quis semper ligula, ac accumsan purus.</p>
-                </section>
-            </div>
-            <div class="content">
+            <div id="rating" class="content">
                 <section class="description">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla bibendum luctus eros. Morbi pulvinar erat sed nisl placerat imperdiet. Donec dignissim diam nunc, et fringilla purus volutpat vitae. Nulla et sodales mauris. In laoreet odio quis lacus sodales ornare. Cras tincidunt, nulla molestie molestie aliquam, ipsum leo maximus dolor, non facilisis magna ante sed metus. Vestibulum posuere ligula dolor, in semper massa ornare vel. Aenean vel porta leo. Maecenas at turpis in massa posuere fringilla a sit amet nulla. Etiam eu sapien non lectus rhoncus vulputate. In vel eros nisi. Nam eu nulla ut metus porttitor scelerisque. Mauris egestas lectus est, id dapibus mauris tincidunt feugiat. Nunc mollis, lectus ac semper laoreet, eros massa sagittis leo, nec dictum magna leo et lectus. Vivamus quis semper ligula, ac accumsan purus.</p>
                 </section>
@@ -70,8 +84,11 @@
         </main>
         <footer>
             <div class="footer-item">
-                <p>Created by Me</p>
+                <p>Created by Us &copy; 2021</p>
+                <img class=".social-media-icons" height="60px" src="../SitAndEat/Images/social-media.png" alt="social-media">
+                <p>For inquiries, please contact:</br> <a href="mailto:dominik.starzyk@codecool.com">Dominik</a></p>
             </div>
         </footer>
+        <p id="float">&#x1F553;</p>
     </body>
 </html>
