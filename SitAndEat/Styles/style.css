@@ -1,16 +1,19 @@
 :root {
   /* Menu */
-  --glowny-kolor-tla: #757575;
-  --glowny-kolor-czcionki-menu: #fff;
-  --hover-kolor-podswietlenia: royalblue;
+  --main-background-color: #757575;
+  --main-menu-font-color: #fff;
+  --hover-color: royalblue;
 
   /* Main */
-  --glowny-kolor-tla-div: #fff;
-  --glowny-kolor-czcionki-div: #4a4a4a;
-  --gradient-kolor-tla: url("../Images/gif3.gif");
+  --main-div-background-color: #fff;
+  --main-div-font-color: #4a4a4a;
+  --background-image: url("../Images/gif3.gif");
 
   /* Footer */
-  --kolor-tla-footer: #fff;
+  --footer-background-color: #fff;
+
+  --main-content-width: 80%;
+  --main-content-margin: 10%;
 }
 
 body {
@@ -18,9 +21,9 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Montserrat";
-  background-image: var(--gradient-kolor-tla);
+  background-image: var(--background-image);
   background-repeat: repeat;
-  color: var(--glowny-kolor-czcionki-div);
+  color: var(--main-div-font-color);
 }
 
 .brand-name {
@@ -37,7 +40,7 @@ body {
 }
 
 #no-hover {
-  color: var(--glowny-kolor-czcionki-menu);
+  color: var(--main-menu-font-color);
 }
 
 .banner-container {
@@ -50,7 +53,7 @@ body {
 }
 
 .active-content {
-  color: var(--hover-kolor-podswietlenia);
+  color: var(--hover-color);
 }
 
 .navbar,
@@ -63,7 +66,7 @@ body {
   scrollbar-width: none;
   justify-content: stretch;
   list-style: none;
-  background-color: var(--glowny-kolor-tla);
+  background-color: var(--main-background-color);
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -75,9 +78,9 @@ body {
 }
 
 .navbar2 {
-    width: 80%;
-    margin-left: 10%;
-  margin-right: 10%;
+  width: var(--main-content-width);
+  margin-left: var(--main-content-margin);
+  margin-right: var(--main-content-margin);
   bottom: 0px;
   position: absolute;
   z-index: 1;
@@ -126,20 +129,20 @@ body {
   padding: 1rem;
   margin: 0 0.25em;
   text-align: center;
-  color: var(--glowny-kolor-czcionki-menu);
+  color: var(--main-menu-font-color);
   cursor: pointer;
   text-decoration: none;
   display: block;
 }
 .nav-item:hover {
-  background-color: var(--hover-kolor-podswietlenia);
+  background-color: var(--hover-color);
   border-radius: 1em;
 }
 
 main {
-  background-color: var(--glowny-kolor-tla);
-  margin-left: 10%;
-  margin-right: 10%;
+  background-color: var(--main-background-color);
+  margin-left: var(--main-content-margin);
+  margin-right: var(--main-content-margin);
   padding: 0% 2%;
   border: none;
   top: 0;
@@ -151,7 +154,7 @@ main {
 
 .content {
   margin: 0 0 2% 0;
-  background-color: var(--glowny-kolor-tla-div);
+  background-color: var(--main-div-background-color);
   padding: 2%;
   border-radius: 1em;
 }
@@ -190,25 +193,25 @@ main {
 }
 
 .reservation {
-  background-color: var(--glowny-kolor-tla);
+  background-color: var(--main-background-color);
   border-radius: 1em;
   padding: 0.75rem;
-  color: var(--glowny-kolor-czcionki-menu);
+  color: var(--main-menu-font-color);
   border: none;
   font:inherit;
 }
 
 .reservation:hover{
-    background-color: var(--hover-kolor-podswietlenia);
+    background-color: var(--hover-color);
 }
 
 footer {
-  margin: 0 10%;
+  margin: 0 var(--main-content-margin);
   padding: 0 2%;
   position: relative;
   top: 0;
-  background-color: var(--glowny-kolor-tla);
-  color: var(--glowny-kolor-czcionki-div);
+  background-color: var(--main-background-color);
+  color: var(--main-div-font-color);
   display: flex;
   flex-flow: column;
   flex-wrap: nowrap;
@@ -216,7 +219,7 @@ footer {
 
 .footer-item {
   padding: 0 2%;
-  background-color: var(--kolor-tla-footer);
+  background-color: var(--footer-background-color);
   border-radius: 1em;
   display: flex;
   flex-flow: row nowrap;
@@ -236,8 +239,8 @@ footer {
   bottom: 1.25rem;
   right: 0px;
   opacity: 80%;
-  background-color: var(--glowny-kolor-tla-div);
-  color: var(--glowny-kolor-czcionki-menu);
+  background-color: var(--main-div-background-color);
+  color: var(--main-menu-font-color);
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
   text-align: center;
