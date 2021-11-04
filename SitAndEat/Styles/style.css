@@ -5,12 +5,12 @@
   --hover-color: rgb(172, 169, 162);
 
   /* Main */
-  --main-div-background-color: black;
+  --main-div-background-color: #262323;
   --main-div-font-color: rgb(219, 219, 218);
   --background-image: url("../Images/gif3.gif");
 
   /* Footer */
-  --footer-background-color: black;
+  --footer-background-color: #262323;
 
   --main-content-width: 80%;
   --main-content-margin: 10%;
