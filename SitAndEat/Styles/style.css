@@ -83,6 +83,7 @@ body {
   width: var(--main-content-width);
   margin-left: var(--main-content-margin);
   margin-right: var(--main-content-margin);
+  padding-bottom: 0.25rem;
   bottom: 0px;
   position: absolute;
   z-index: 1;
@@ -100,7 +101,8 @@ body {
 
 .navbar::-webkit-scrollbar,
 .navbar2::-webkit-scrollbar,
-.flex-description::-webkit-scrollbar {
+.flex-description::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar {
   display: none;
 }
 
@@ -136,7 +138,8 @@ body {
   text-decoration: none;
   display: block;
 }
-.nav-item:hover {
+.nav-item:hover,
+#make-reservation:hover {
   background-color: var(--hover-color);
   border-radius: var(--radius);
 }
@@ -203,8 +206,16 @@ main {
   font: inherit;
 }
 
-.reservation:hover {
+.reservation:hover,
+.reservation-button:hover {
   background-color: var(--hover-color);
+}
+
+.reservation-button {
+  margin: 0;
+  border: 2px solid var(--main-div-background-color);
+  background-color: (--main-div-background-color);
+  border-radius: 1em;
 }
 
 footer {
@@ -262,6 +273,29 @@ footer {
   width: 2rem;
 }
 
+#make-reservation {
+  background-color: var(--main-div-background-color);
+}
+
+.food-menu-list {
+  list-style-type: none;
+  padding: 0 1rem;
+}
+
+.food-menu-item {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+span.star {
+  text-decoration: none;
+  color: gold;
+}
+
 @media screen and (min-width: 700px) {
   main {
     flex-flow: row;
@@ -271,5 +305,114 @@ footer {
   .content {
     margin: 1%;
     flex-grow: 2;
+  }
+  .footer-item {
+    margin: 0 1%;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  padding-top: 59px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  overflow-x: scroll;
+  overflow-y: scroll;
+  border-radius: var(--radius);
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: var(--main-content-width);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px 100px;
+}
+
+.grid-item {
+  background-image: url("../Images/carpet1.jpg");
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+}
+
+.with-table {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  align-items: center;
+  text-align: center;
+  height: 70%;
+  width: auto;
+  background-image: url("../Images/wood.jpg");
+  background-size: cover;
+  margin: 15%;
+  border-radius: var(--radius);
+}
+
+.taken-table {
+  background-image: none;
+  background-color: tomato;
+}
+
+.selected-table {
+  background-image: none;
+  background-color: lawngreen;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
   }
 }
