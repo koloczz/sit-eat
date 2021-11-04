@@ -14,6 +14,8 @@
 
   --main-content-width: 80%;
   --main-content-margin: 10%;
+
+  --radius: 1rem;
 }
 
 body {
@@ -73,8 +75,8 @@ body {
 
 .navbar {
   z-index: 1;
-  border-bottom-right-radius: 1em;
-  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
 }
 
 .navbar2 {
@@ -86,8 +88,8 @@ body {
   position: absolute;
   z-index: 1;
   height: 59px;
-  border-top-right-radius: 1em;
-  border-top-left-radius: 1em;
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
 }
 
 .sticky {
@@ -137,7 +139,7 @@ body {
 }
 .nav-item:hover, #make-reservation:hover {
   background-color: var(--hover-color);
-  border-radius: 1em;
+  border-radius: var(--radius);
 }
 
 main {
@@ -157,7 +159,7 @@ main {
   margin: 0 0 2% 0;
   background-color: var(--main-div-background-color);
   padding: 2%;
-  border-radius: 1em;
+  border-radius: var(--radius);
 }
 
 .flex-description {
@@ -228,7 +230,7 @@ footer {
 .footer-item {
   padding: 0 2%;
   background-color: var(--footer-background-color);
-  border-radius: 1em;
+  border-radius: var(--radius);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -250,8 +252,8 @@ footer {
   opacity: 80%;
   background-color: var(--main-div-background-color);
   color: var(--main-menu-font-color);
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
   text-align: center;
   box-shadow: 1px 1px 2px #111;
   font-size: 1.2rem;
@@ -261,6 +263,10 @@ footer {
 
 #make-reservation {
     background-color: var(--main-div-background-color);
+}
+span.star {
+  text-decoration: none;
+  color: gold;
 }
 
 @media screen and (min-width: 700px) {
