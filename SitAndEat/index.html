@@ -92,6 +92,18 @@
                 <p>For inquiries, please contact:</br> <a href="mailto:dominik.starzyk@codecool.com">Dominik</a></p>
             </div>
         </footer>
-        <p id="float">&#x1F553;</p>
+        <p id="float">
+            &#x1F553;
+                <input class="slidecontainer" type="range" min="0" max="23" value="12" class="slider" id="myRange" onchange="updateTextInput(this.value)">
+                <input type="number" class="input" id="textInputHour" value="12">
+            &#x1f464
+                <input class="slidecontainer" type="range" min="1" max="16" value="1" class="slider" id="myRange" onchange="updateTextInput2(this.value)">
+                <input type="number" class="input" id="textInputPerson" value="1">
+
+                <input id="datefield" type="date" id="start" name="date-time"  
+                value="">
+
+
+        </p>
     </body>
 </html>
