@@ -22,3 +22,9 @@ function stickToTop() {
         }
     }
 }
+
+function makeSelection(target) {
+    if (!target.classList.contains("taken-table")) {
+        target.classList.toggle("selected-table");
+    }
+}
