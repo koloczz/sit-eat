@@ -264,6 +264,21 @@ footer {
 #make-reservation {
     background-color: var(--main-div-background-color);
 }
+
+.food-menu-list {
+  list-style-type: none;
+  padding: 0 1rem;
+}
+
+.food-menu-item {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 span.star {
   text-decoration: none;
   color: gold;
