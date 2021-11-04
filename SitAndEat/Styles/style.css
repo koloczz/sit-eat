@@ -319,6 +319,36 @@ footer {
   align-items: flex-end;
 }
 
+.review-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.review-item {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--main-div-font-color);
+  border-radius: var(--radius);
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: auto 8rem;
+}
+
+.review-author {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.review-rating {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.review-text {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
 span.star {
   text-decoration: none;
   color: gold;
