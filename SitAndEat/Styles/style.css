@@ -233,6 +233,7 @@ footer {
 }
 
 #float {
+    clear:both;
   position: fixed;
   width: 2.5rem;
   height: 1.875rem;
@@ -248,4 +249,16 @@ footer {
   font-size: 1.2rem;
   padding: 1rem 0;
   text-decoration: none;
+}
+
+@media screen and (min-width: 700px) {
+    main {
+        flex-flow: row;
+        flex-wrap: wrap;
+        align-content: stretch;
+    }
+    .content {
+        margin: 1%;
+        flex-grow: 2;
+    }
 }
