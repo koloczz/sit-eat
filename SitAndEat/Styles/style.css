@@ -1,12 +1,12 @@
 :root {
   /* Menu */
-  --main-background-color: #757575;
+  --main-background-color: #df1818;
   --main-menu-font-color: #fff;
-  --hover-color: royalblue;
+  --hover-color: rgb(172, 169, 162);
 
   /* Main */
-  --main-div-background-color: #fff;
-  --main-div-font-color: #4a4a4a;
+  --main-div-background-color: black;
+  --main-div-font-color: rgb(219, 219, 218);
   --background-image: url("../Images/gif3.gif");
 
   /* Footer */
@@ -187,9 +187,9 @@ main {
 }
 
 .reservation-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 
 .reservation {
@@ -198,11 +198,11 @@ main {
   padding: 0.75rem;
   color: var(--main-menu-font-color);
   border: none;
-  font:inherit;
+  font: inherit;
 }
 
-.reservation:hover{
-    background-color: var(--hover-color);
+.reservation:hover {
+  background-color: var(--hover-color);
 }
 
 footer {
@@ -228,8 +228,8 @@ footer {
 }
 
 .footer-item p {
-    width: 240px;
-    margin:  0.5rem;
+  width: 240px;
+  margin: 0.5rem;
 }
 
 #float {
