@@ -253,6 +253,11 @@ footer {
   text-decoration: none;
 }
 
+span.star {
+  text-decoration: none;
+  color: gold;
+}
+
 @media screen and (min-width: 700px) {
     main {
         flex-flow: row;
