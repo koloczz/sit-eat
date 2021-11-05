@@ -384,13 +384,14 @@ span.star {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
+  margin: 0.5rem;
 }
 
 .reservation-data-input input,
 .reservation-data-input button {
   border-radius: var(--radius);
   padding: 0.5rem;
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -481,7 +482,7 @@ span.star {
 }
 
 .grid-container {
-  padding: 1rem;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, auto);
