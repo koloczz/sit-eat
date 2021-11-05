@@ -216,7 +216,7 @@ main {
 
 .reservation-button {
   margin: 0;
-  border: 2px solid var(--main-div-background-color);
+  outline: 2px solid var(--main-div-background-color);
   background-color: (--main-div-background-color);
   border-radius: 1em;
 }
