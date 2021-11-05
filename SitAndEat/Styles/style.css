@@ -366,6 +366,19 @@ span.star {
   color: gold;
 }
 
+.reservation-data-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.reservation-data-input input,
+.reservation-data-input button {
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
 @media screen and (min-width: 700px) {
   main {
     flex-flow: row;

@@ -208,6 +208,14 @@
                             <div class="with-table" onclick="makeSelection(event.target)">4</div>
                         </div>
                     </div>
+
+                    <!-- Fill in name, tel and submit -->
+                    <form class="reservation-data-input">
+                        <input id="userName" type="text" placeholder="Your name here" pattern="^\s*\S+.*$" required/>
+                        <input id="userTel" type="tel" placeholder="Your phone number" pattern="^\d{9}$" required/>
+                        <button class="reservation">Submit reservation</button>
+                    </form>
+
                 </div>
               </div>
           </div>
