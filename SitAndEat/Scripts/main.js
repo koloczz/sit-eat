@@ -23,17 +23,14 @@ function stickToTop() {
     }
 }
 
-<<<<<<< HEAD
 function updateTextInput(val) {
     document.getElementById('textInputHour').value=val; 
   }
 function updateTextInput2(val) {
     document.getElementById('textInputPerson').value=val; 
   }
-=======
 function makeSelection(target) {
     if (!target.classList.contains("taken-table")) {
         target.classList.toggle("selected-table");
     }
 }
->>>>>>> 6d243177cf001ed4a32e9f07407b4ec25f13b077
