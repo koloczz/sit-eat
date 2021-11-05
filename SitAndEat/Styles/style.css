@@ -366,6 +366,18 @@ span.star {
   color: gold;
 }
 
+#table-filter {
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#table-filter input {
+  margin: 0.5rem;
+  background-color: white;
+}
+
 .reservation-data-input {
   display: flex;
   flex-direction: row;
@@ -461,8 +473,7 @@ span.star {
 }
 
 .grid-container {
-    margin-top: 1rem;
-    padding: 1rem;
+  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(8,1fr);
   grid-template-rows: repeat(8,auto);
