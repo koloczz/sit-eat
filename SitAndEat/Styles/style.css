@@ -142,7 +142,8 @@ body {
   display: block;
 }
 
-.nav-item:hover, #make-reservation:hover {
+.nav-item:hover,
+#make-reservation:hover {
   background-color: var(--hover-color);
   border-radius: var(--radius);
 }
@@ -366,18 +367,38 @@ span.star {
   color: gold;
 }
 
-.reservation-data-input {
+#table-filter {
+  margin: 0 0.5rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: end;
+}
+
+#table-filter input {
+  margin: 0.5rem;
+  background-color: white;
+}
+
+.reservation-data-input {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.5rem;
 }
 
 .reservation-data-input input,
 .reservation-data-input button {
   border-radius: var(--radius);
   padding: 0.5rem;
-  margin: 1rem;
+  margin: 0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .reservation-data-input {
+    flex-direction: row;
+    justify-content: end;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -396,10 +417,10 @@ span.star {
 }
 
 @media screen and (max-width: 700px) {
-    .grid-item {
-        width: 5rem;
-    }
+  .grid-item {
+    width: 5rem;
   }
+}
 
 .modal {
   display: none;
@@ -416,8 +437,8 @@ span.star {
 }
 
 .modal-content {
-    position: fixed;
-    top: -59px;
+  position: fixed;
+  top: -59px;
   overflow-x: scroll;
   overflow-y: scroll;
   border-radius: var(--radius);
@@ -429,8 +450,8 @@ span.star {
 }
 
 .close {
-    position: absolute;
-    right: 1rem;
+  position: absolute;
+  right: 1rem;
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -461,11 +482,10 @@ span.star {
 }
 
 .grid-container {
-    margin-top: 1rem;
-    padding: 1rem;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(8,1fr);
-  grid-template-rows: repeat(8,auto);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, auto);
 }
 
 .grid-item {
