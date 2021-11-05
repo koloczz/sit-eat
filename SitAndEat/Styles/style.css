@@ -29,7 +29,7 @@ body {
 }
 
 .brand-name {
-  background-image: url("../Images/logoV2.png");
+  background-image: url("../Images/logoV3.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -138,8 +138,8 @@ body {
   text-decoration: none;
   display: block;
 }
-.nav-item:hover,
-#make-reservation:hover {
+
+.nav-item:hover, #make-reservation:hover {
   background-color: var(--hover-color);
   border-radius: var(--radius);
 }
