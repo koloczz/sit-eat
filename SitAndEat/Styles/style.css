@@ -369,6 +369,7 @@ span.star {
 .reservation-data-input {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: end;
 }
 
