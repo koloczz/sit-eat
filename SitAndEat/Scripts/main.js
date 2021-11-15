@@ -57,16 +57,16 @@ function randomCarpetBG(){
     }
   }
 
-  function randomTableBG(){
-    var random= Math.floor(Math.random() * 6) + 0;
-    var bigSize = ["url('../SitAndEat/Images/wood.jpg')",
-                    "url('../SitAndEat/Images/wood2.jpg')",
-                    "url('../SitAndEat/Images/wood3.jpg')",
-                    "url('../SitAndEat/Images/marble.jpg')"];
-    var myArr = document.getElementsByClassName("with-table");
-    for (const element of myArr) {
-        if (!element.classList.contains("taken-table") && !element.classList.contains("selected-table")){
-            element.style.backgroundImage=bigSize[random];
-        }
-    }
-  }
+//   function randomTableBG(){
+//     var random= Math.floor(Math.random() * 6) + 0;
+//     var bigSize = ["url('../SitAndEat/Images/wood.jpg')",
+//                     "url('../SitAndEat/Images/wood2.jpg')",
+//                     "url('../SitAndEat/Images/wood3.jpg')",
+//                     "url('../SitAndEat/Images/marble.jpg')"];
+//     var myArr = document.getElementsByClassName("with-table");
+//     for (const element of myArr) {
+//         if (!element.classList.contains("taken-table") && !element.classList.contains("selected-table")){
+//             element.style.backgroundImage=bigSize[random];
+//         }
+//     }
+//   }
