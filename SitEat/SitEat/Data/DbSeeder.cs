@@ -72,14 +72,35 @@ namespace SitEat.Data
                 new MenuItem { RestaurantId = 3, Name = "Item-R3-H", Price = 100.23M }
                 );
 
-            //modelBuilder.Entity<Review>().HasData(
-            //    new Review { RestaurantId = 1, Author = "Arnold", Text = "It sucks!", Score = 1 },
-            //    new Review { RestaurantId = 2, Author = "Arnold", Text = "It sucks!", Score = 1 }
-            //    );
+            modelBuilder.Entity<Review>().HasData(
+                new Review { RestaurantId = 1, Author = "Arnold", Text = "It sucks!", Score = 1 },
+                new Review { RestaurantId = 1, Author = "Bernard", Text = "Great place, would certainly eat at again.", Score = 5 },
+                new Review { RestaurantId = 1, Author = "Ciril", Text = "If only they had more variety. The quality is decent but I got bored of their food already.", Score = 3 },
+                new Review { RestaurantId = 1, Author = "Dionisius", Text = "Meh.", Score = 2 },
+                new Review { RestaurantId = 1, Author = "Ergon", Text = "I love this place! <3", Score = 5 },
+                new Review { RestaurantId = 1, Author = "Fred", Text = "Decent food. Pretty cheap too.", Score = 4 },
+
+                new Review { RestaurantId = 2, Author = "Gregory", Text = "Just wonderful!", Score = 5 },
+                new Review { RestaurantId = 2, Author = "Helga", Text = "I'm not saying that this place sells s***, but I wouldn't eat it again.", Score = 1 },
+                new Review { RestaurantId = 2, Author = "Ian", Text = "Not great, not terrible", Score = 3 },
+                new Review { RestaurantId = 2, Author = "Jeremy", Text = "Truly amazing place, never ate such good food", Score = 5 },
+                new Review { RestaurantId = 2, Author = "Karol", Text = "I enjoyed every bit of it!", Score = 5 },
+
+                new Review { RestaurantId = 3, Author = "Gregory", Text = "Just wonderful!", Score = 5 },
+                new Review { RestaurantId = 3, Author = "Helga", Text = "I'm not saying that this place sells s***, but I wouldn't eat it again.", Score = 1 },
+                new Review { RestaurantId = 3, Author = "Ian", Text = "Not great, not terrible", Score = 3 },
+                new Review { RestaurantId = 3, Author = "Jeremy", Text = "Truly amazing place, never ate such good food", Score = 5 },
+                new Review { RestaurantId = 3, Author = "Karol", Text = "I enjoyed every bit of it!", Score = 5 },
+                new Review { RestaurantId = 3, Author = "Gregory", Text = "Just wonderful!", Score = 5 },
+                new Review { RestaurantId = 3, Author = "Helga", Text = "I'm not saying that this place sells s***, but I wouldn't eat it again.", Score = 1 },
+                new Review { RestaurantId = 3, Author = "Ian", Text = "Not great, not terrible", Score = 3 },
+                new Review { RestaurantId = 3, Author = "Jeremy", Text = "Truly amazing place, never ate such good food", Score = 5 },
+                new Review { RestaurantId = 3, Author = "Karol", Text = "I enjoyed every bit of it!", Score = 5 }
+                );
 
             //modelBuilder.Entity<Table>().HasData();
             //modelBuilder.Entity<Booking>().HasData();
-                
+
         }
     }
 }
