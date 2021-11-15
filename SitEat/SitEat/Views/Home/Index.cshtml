@@ -10,7 +10,7 @@
         <section class="flex-description">
             <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
             <img src="@Html.DisplayText(item.ImagePath)" alt="thumb">
-            <p class="tag-section">
+            @*<p class="tag-section">
                 @foreach(var tag in item.Tags)
                     {
                         @Html.DisplayFor(modelItem => tag.Value)                    
@@ -20,7 +20,7 @@
                 {
                     <p>*</p>
                 }
-                @Html.DisplayFor(modelItem => item.Score)/5</p>
+                @Html.DisplayFor(modelItem => item.Score)/5</p>*@
             <p class="hours-section">@Html.DisplayFor(modelItem => item.OpeningTimes)</p>
         </section>
         <div class="reservation-container">

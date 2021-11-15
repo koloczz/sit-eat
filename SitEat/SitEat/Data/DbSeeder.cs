@@ -17,21 +17,24 @@ namespace SitEat.Data
                     Id = 1,
                     Name = "Marco Polo",
                     Description = "Lorem ipsum blah blah blah",
-                    ImagePath = ""
+                    ImagePath = "",
+                    OpeningTimes = ""
                 },
                 new Restaurant
                 {
                     Id = 2,
                     Name = "Restaurant number 2",
                     Description = "Lorem ipsum blah blah blah",
-                    ImagePath = ""
+                    ImagePath = "",
+                    OpeningTimes = ""
                 },
                 new Restaurant
                 {
                     Id = 3,
                     Name = "Family Place",
                     Description = "Lorem ipsum blah blah blah",
-                    ImagePath = ""
+                    ImagePath = "",
+                    OpeningTimes = ""
                 }
                 );
 

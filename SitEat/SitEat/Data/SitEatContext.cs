@@ -19,5 +19,10 @@ namespace SitEat.Data
         public DbSet<MenuItem> MenuItem { get; set; }
 
         public DbSet<Booking> Booking { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Seed();
+        }
     }
 }
