@@ -7,7 +7,7 @@
   /* Main */
   --main-div-background-color: #262323;
   --main-div-font-color: rgb(219, 219, 218);
-  --background-image: url("../Images/gif3.gif");
+  --background-image: url("../img/gif3.gif");
 
   /* Footer */
   --footer-background-color: #262323;
@@ -29,7 +29,7 @@ body {
 }
 
 .brand-name {
-  background-image: url("../Images/logoV3.png");
+  background-image: url("../img/logoV3.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@ body {
 }
 
 .banner-container {
-  background-image: url("../Images/26467404.jpg");
+  background-image: url("../img/26467404.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: max(35vh, 250px);
@@ -489,7 +489,7 @@ span.star {
 }
 
 .grid-item {
-  background-image: url("../Images/carpet1.jpg");
+  background-image: url("../img/carpet1.jpg");
   background-size: cover;
   aspect-ratio: 1;
 }
@@ -505,7 +505,7 @@ span.star {
   text-align: center;
   height: 70%;
   width: auto;
-  background-image: url("../Images/wood.jpg");
+  background-image: url("../img/wood.jpg");
   background-size: cover;
   margin: 15%;
   border-radius: var(--radius);
