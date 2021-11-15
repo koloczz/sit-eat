@@ -15,6 +15,7 @@ namespace SitEat.Models
         public int? RestaurantId { get; set; }
 
         [Required]
+        [Column(TypeName = "decimal(10,2)")]
         public decimal? Price { get; set; }
     }
 }
