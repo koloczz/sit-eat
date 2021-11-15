@@ -394,7 +394,7 @@ span.star {
   margin: 0.5rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 850px) {
   .reservation-data-input {
     flex-direction: row;
     justify-content: end;
@@ -518,7 +518,8 @@ span.star {
 
 .selected-table {
   background-image: none;
-  background-color: lawngreen;
+  background-color: lawngreen !important;
+
 }
 
 @keyframes animatetop {

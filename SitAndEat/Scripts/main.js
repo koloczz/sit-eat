@@ -44,3 +44,29 @@ function changeTheme() {
     var randomColor = Math.floor(Math.min(Math.random(), 0.9)*16777215).toString(16);
     root.style.setProperty("--main-background-color", "#" + randomColor);
 }
+
+function randomCarpetBG(){
+    var random= Math.floor(Math.random() * 4) + 0;
+    var bigSize = ["url('../SitAndEat/Images/carpet1.jpg')",
+                    "url('../SitAndEat/Images/carpet2.jpg')",
+                    "url('../SitAndEat/Images/carpet3.jpg')",
+                    "url('../SitAndEat/Images/carpet4.jpg')"];
+    var myArr = document.getElementsByClassName("grid-item");
+    for (const element of myArr) {
+        element.style.backgroundImage=bigSize[random];
+    }
+  }
+
+//   function randomTableBG(){
+//     var random= Math.floor(Math.random() * 6) + 0;
+//     var bigSize = ["url('../SitAndEat/Images/wood.jpg')",
+//                     "url('../SitAndEat/Images/wood2.jpg')",
+//                     "url('../SitAndEat/Images/wood3.jpg')",
+//                     "url('../SitAndEat/Images/marble.jpg')"];
+//     var myArr = document.getElementsByClassName("with-table");
+//     for (const element of myArr) {
+//         if (!element.classList.contains("taken-table") && !element.classList.contains("selected-table")){
+//             element.style.backgroundImage=bigSize[random];
+//         }
+//     }
+//   }
