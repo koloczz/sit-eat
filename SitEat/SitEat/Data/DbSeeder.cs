@@ -70,9 +70,12 @@ namespace SitEat.Data
                 new MenuItem { RestaurantId = 3, Name = "Item-R3-F", Price = 100.23M },
                 new MenuItem { RestaurantId = 3, Name = "Item-R3-G", Price = 100.23M },
                 new MenuItem { RestaurantId = 3, Name = "Item-R3-H", Price = 100.23M }
-                }
-        );
-            modelBuilder.Entity<Review>().HasData();
+                );
+
+            modelBuilder.Entity<Review>().HasData(
+                new Review { RestaurantId = 1, Author = "Arnold", Text = "It sucks!", Score = 1 }
+                
+                );
             modelBuilder.Entity<Table>().HasData();
             modelBuilder.Entity<Booking>().HasData();
         }
