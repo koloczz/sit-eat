@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SitEat.Models
 {
@@ -20,5 +21,8 @@ namespace SitEat.Models
 
         [Required]
         public string? OpeningTimes { get; set; }
+        public ICollection<Table> Tables { get; set; }
+        public ICollection<Review> Reviews { get; set; }
+        public ICollection<MenuItem> MenuItems { get; set; }
     }
 }

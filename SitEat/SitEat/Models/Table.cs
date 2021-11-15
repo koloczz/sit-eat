@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SitEat.Models
@@ -19,5 +20,7 @@ namespace SitEat.Models
 
         [Required]
         public int? PositionY { get; set; }
+        public ICollection<Booking> Bookings { get; set; }
+
     }
 }
