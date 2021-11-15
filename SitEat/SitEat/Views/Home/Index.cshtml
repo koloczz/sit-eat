@@ -1,8 +1,30 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<SitEat.Models.RestaurantTagReviewViewModel>
+
+@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@foreach (var item in Model)
+{
+    <div class="content">
+        <section class="flex-description">
+            <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
+            <img src="@Html.DisplayText(item.ImagePath)" alt="thumb">
+            <p class="tag-section">
+                @foreach(var tag in item.Tags)
+                    {
+                        @Html.DisplayFor(modelItem => tag.Value)                    
+                    }
+            </p>
+            <p class="rating-section"> Rating: @for (int i=1; i < item.Score; i++)
+                {
+                    <p>*</p>
+                }
+                @Html.DisplayFor(modelItem => item.Score)/5</p>
+            <p class="hours-section">@Html.DisplayFor(modelItem => item.OpeningTimes)</p>
+        </section>
+        <div class="reservation-container">
+            <button class="reservation">Make reservation</button>
+        </div>
+    </div>
+}
