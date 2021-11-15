@@ -17,12 +17,10 @@ namespace SitEat.Models
         public string? ImagePath { get; set; }
 
         [Required]
-        public string? Tags { get; set; }
-
-        [Required]
         public string? OpeningTimes { get; set; }
         public ICollection<Table> Tables { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public ICollection<MenuItem> MenuItems { get; set; }
+        public ICollection<Tag> Tags { get; set; }
     }
 }
