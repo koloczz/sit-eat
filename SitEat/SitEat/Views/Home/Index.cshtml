@@ -7,7 +7,7 @@
 @foreach (var item in Model)
 {
     <div class="content">
-        <section class="flex-description">
+        <section class="flex-description" onclick="location.href='@Url.Action("Details","Restaurant", new {Id = item.Id})'">
             <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
             <img src="@item.ImagePath" alt="thumb">
             <p class="tag-section">
@@ -16,18 +16,18 @@
                         @Html.DisplayFor(modelItem => tag)                    
                     }
             </p>
-            @*<p class="rating-section"> Rating: @for (int i=1; i < item.Score; i++)
+            <p class="rating-section"> Rating: @for (int i=0; i < Math.Floor((decimal)item.Rating); i++)
                 {
-                    <p>*</p>
+                    <span class="star">&starf;</span>
                 }
-                @Html.DisplayFor(modelItem => item.Score)/5</p>*@
+            @Html.DisplayFor(modelItem => item.Rating)/5</p>
             @foreach (var time in item.OpeningTimes.Split("<br>"))
             {
                 <p class="hours-section">@time</p>
             }
         </section>
         <div class="reservation-container">
-            <button class="reservation">Make reservation</button>
+            <button class="reservation" onclick="location.href='@Url.Action("Details","Restaurant", new {Id = item.Id, IsDisplayed = true})'">Make reservation</button>
         </div>
     </div>
 }

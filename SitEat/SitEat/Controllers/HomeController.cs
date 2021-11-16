@@ -23,19 +23,24 @@ namespace SitEat.Controllers
         public IActionResult Index()
         {
             var list = new List<RestaurantTagReviewViewModel>();
-            var restaurants = _sitEatContext.Restaurants.Include(r => r.Tags).OrderByDescending(x => x.Id).ToList();
+            var restaurants = _sitEatContext.Restaurants
+                .Include(r => r.Tags)
+                .Include(r => r.Reviews)
+                .OrderByDescending(x => x.Id)
+                .ToList();
             foreach (var restaurant in restaurants)
             {
                 var viewModel = new RestaurantTagReviewViewModel();
+                viewModel.Id = restaurant.Id;
                 viewModel.Name = restaurant.Name;
                 viewModel.ImagePath = restaurant.ImagePath;
+                viewModel.Rating = (double?)Math.Round((decimal)restaurant.Reviews.Average(rev => rev.Score), 2);
                 viewModel.OpeningTimes = restaurant.OpeningTimes;
                 viewModel.Tags = new();
                 foreach (var tag in restaurant.Tags)
                 {
                     viewModel.Tags.Add(tag.Text);
                 }
-                //viewModel.Score = _sitEatContext.Review.Where(x => x.RestaurantId == restaurant.Id).FirstOrDefault().Score;
                 list.Add(viewModel);
             }
             return View(list);

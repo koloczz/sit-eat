@@ -170,7 +170,7 @@ main {
 
 .flex-description {
   padding: 0.5rem;
-  max-height: 20em;
+  max-height: 21em;
   overflow-x: scroll;
   scrollbar-width: none;
   display: flex;
