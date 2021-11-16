@@ -18,7 +18,7 @@ namespace SitEat.Data
                     Name = "Hard Rock Café - Kraków",
                     Description = "Located in the UNESCO World Heritage Market Square, next door to the most famous church in Poland, St. Mary’s Basilica, Hard Rock Krakow will inspire your taste buds to greatness with delicious food, signature cocktails, and the hottest live entertainment in Poland. With room for 130 guests over three spacious floors, our restaurant welcomes locals and tourists alike for delectable dining, top notch entertainment, and unforgettable events. After a delicious meal of American fare, take a stroll through musical history with iconic pieces of memorabilia you can only find at Hard Rock Cafe Krakow. Enjoy freshly prepared American cuisine and classic favorites like our Legendary Burger. From flavorful salads, to savory entrees, our chefs use only the freshest ingredients to create culinary perfection. Experience the difference of Hard Rock’s service with an energetic, hardworking staff, ready to provide you with everything you need to enjoy the perfect meal.",
                     ImagePath = "/img/28088554.jpg",
-                    OpeningTimes = "Mon - Fri: 7:00 - 22:00<br>Sat - Sun: 12:00 - 24:00",
+                    OpeningTimes = "Mon - Fri: 7:00 - 22:00<br>Sat - Sun: 12:00 - 24:00"
                 },
                 new Restaurant
                 {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SitEat.Data;
 using SitEat.Models;
@@ -22,17 +23,18 @@ namespace SitEat.Controllers
         public IActionResult Index()
         {
             var list = new List<RestaurantTagReviewViewModel>();
-            var restaurants = _sitEatContext.Restaurants.OrderByDescending(x => x.Id).ToList();
+            var restaurants = _sitEatContext.Restaurants.Include(r => r.Tags).OrderByDescending(x => x.Id).ToList();
             foreach (var restaurant in restaurants)
             {
                 var viewModel = new RestaurantTagReviewViewModel();
                 viewModel.Name = restaurant.Name;
                 viewModel.ImagePath = restaurant.ImagePath;
                 viewModel.OpeningTimes = restaurant.OpeningTimes;
-                //foreach (var tag in restaurant.Tags)
-                //{
-                //    viewModel.Tags.Add(tag.Text);
-                //}
+                viewModel.Tags = new();
+                foreach (var tag in restaurant.Tags)
+                {
+                    viewModel.Tags.Add(tag.Text);
+                }
                 //viewModel.Score = _sitEatContext.Review.Where(x => x.RestaurantId == restaurant.Id).FirstOrDefault().Score;
                 list.Add(viewModel);
             }
