@@ -46,7 +46,8 @@ namespace SitEat.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<int>("TableId")
                         .HasColumnType("int");
@@ -62,7 +63,7 @@ namespace SitEat.Migrations
 
                     b.HasIndex("TableId");
 
-                    b.ToTable("Booking");
+                    b.ToTable("Bookings");
                 });
 
             modelBuilder.Entity("SitEat.Models.MenuItem", b =>
@@ -88,7 +89,7 @@ namespace SitEat.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("MenuItem");
+                    b.ToTable("MenuItems");
 
                     b.HasData(
                         new
@@ -286,7 +287,7 @@ namespace SitEat.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Restaurant");
+                    b.ToTable("Restaurants");
 
                     b.HasData(
                         new
@@ -646,7 +647,7 @@ namespace SitEat.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("Review");
+                    b.ToTable("Reviews");
 
                     b.HasData(
                         new
@@ -766,7 +767,7 @@ namespace SitEat.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("Table");
+                    b.ToTable("Tables");
                 });
 
             modelBuilder.Entity("SitEat.Models.Tag", b =>
@@ -782,7 +783,7 @@ namespace SitEat.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tag");
+                    b.ToTable("Tags");
 
                     b.HasData(
                         new
