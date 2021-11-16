@@ -56,9 +56,6 @@ namespace SitEat
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute(
-                    name: "restaurant",
-                    pattern: "{controller=Restaurant}/{action=Index}/{id?}");
             });
         }
     }

@@ -17,7 +17,7 @@ namespace SitEat.Controllers
         {
             _sitEatContext = sitEatContext;
         }
-        public IActionResult Index(int id, int filterPersonCount, int filterHour, DateTime filterDate)
+        public IActionResult Details(int id, int filterPersonCount, int filterHour, DateTime filterDate)
         {
             var restaurantDetails = new RestaurantDetailsViewModel();
             Restaurant currentRestaurant = _sitEatContext.Restaurants
