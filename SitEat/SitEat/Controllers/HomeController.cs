@@ -22,7 +22,7 @@ namespace SitEat.Controllers
         public IActionResult Index()
         {
             var list = new List<RestaurantTagReviewViewModel>();
-            var restaurants = _sitEatContext.Restaurant.OrderByDescending(x => x.Id).ToList();
+            var restaurants = _sitEatContext.Restaurants.OrderByDescending(x => x.Id).ToList();
             foreach (var restaurant in restaurants)
             {
                 var viewModel = new RestaurantTagReviewViewModel();

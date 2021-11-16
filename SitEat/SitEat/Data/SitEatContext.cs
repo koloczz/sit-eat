@@ -10,15 +10,15 @@ namespace SitEat.Data
         {
         }
 
-        public DbSet<Restaurant> Restaurant { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
 
-        public DbSet<Table> Table { get; set; }
+        public DbSet<Table> Tables { get; set; }
 
-        public DbSet<Review> Review { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
-        public DbSet<MenuItem> MenuItem { get; set; }
+        public DbSet<MenuItem> MenuItems { get; set; }
 
-        public DbSet<Booking> Booking { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
