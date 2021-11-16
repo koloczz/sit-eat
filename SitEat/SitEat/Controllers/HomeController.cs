@@ -31,7 +31,7 @@ namespace SitEat.Controllers
                 viewModel.OpeningTimes = restaurant.OpeningTimes;
                 //foreach (var tag in restaurant.Tags)
                 //{
-                //    viewModel.Tags.Add(tag, tag.Text);
+                //    viewModel.Tags.Add(tag.Text);
                 //}
                 //viewModel.Score = _sitEatContext.Review.Where(x => x.RestaurantId == restaurant.Id).FirstOrDefault().Score;
                 list.Add(viewModel);
