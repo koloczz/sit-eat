@@ -22,7 +22,7 @@ namespace SitEat.Models
         public double? Rating { get; set; }
 
         [Required]
-        public ICollection<Table>? Tables { get; set; }
+        public ICollection<TableInfo>? TableInfos { get; set; }
 
         [Required]
         public ICollection<Tag>? Tags { get; set; }

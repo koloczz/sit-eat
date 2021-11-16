@@ -17,7 +17,7 @@ namespace SitEat.Controllers
         {
             _sitEatContext = sitEatContext;
         }
-        public IActionResult Index(int id)
+        public IActionResult Index(int id, int filterPersonCount, int filterHour, DateTime filterDate)
         {
             var restaurantDetails = new RestaurantDetailsViewModel();
             Restaurant currentRestaurant = _sitEatContext.Restaurants
@@ -34,8 +34,19 @@ namespace SitEat.Controllers
             restaurantDetails.MenuItems = currentRestaurant.MenuItems;
             restaurantDetails.Reviews = currentRestaurant.Reviews;
             restaurantDetails.Tags = currentRestaurant.Tags;
-            restaurantDetails.Tables = currentRestaurant.Tables;
-
+            restaurantDetails.TableInfos = new List<TableInfo>();
+            foreach (var table in currentRestaurant.Tables)
+            {
+                TableInfo tableInfo = new TableInfo
+                {
+                    TableId = table.Id,
+                    NumberOfSits = table.NumberOfSits,
+                    PositionX = table.PositionX,
+                    PositionY = table.PositionY,
+                    IsBooked = table.Bookings.Any(b => b.Date == filterDate && b.TimeStart == filterHour)
+                };
+                restaurantDetails.TableInfos.Add(tableInfo);
+            }
             return View(restaurantDetails);
         }
     }
