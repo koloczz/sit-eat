@@ -19,15 +19,18 @@ namespace SitEat.Models
         public string? OpeningTimes { get; set; }
 
         [Required]
-        public List<Table>? Tables { get; set; }
+        public double? Rating { get; set; }
 
         [Required]
-        public List<Tag>? Tags { get; set; }
+        public ICollection<Table>? Tables { get; set; }
 
         [Required]
-        public List<MenuItem>? MenuItems { get; set; }
+        public ICollection<Tag>? Tags { get; set; }
 
         [Required]
-        public List<Review>? Reviews { get; set; }
+        public ICollection<MenuItem>? MenuItems { get; set; }
+
+        [Required]
+        public ICollection<Review>? Reviews { get; set; }
     }
 }
