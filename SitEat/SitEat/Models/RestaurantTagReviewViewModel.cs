@@ -16,7 +16,7 @@ namespace SitEat.Models
         public string? OpeningTimes { get; set; }
 
         [Required]
-        public Dictionary<Tag, string>? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 
         [Required]
         public int? Score { get; set; }
