@@ -39,6 +39,14 @@ function makeSelection(target) {
     }
 }
 
+function getAllSelectedTables() {
+    var tables = document.getElementsByClassName('selected-table');
+    var postInput = document.getElementById('postInput');
+    for (var i = 0; i < tables.length; i++) {
+        postInput.value += tables[i].id + ",";
+    }
+}
+
 function changeTheme() {
     var root = document.querySelector(":root");
     var randomColor = Math.floor(Math.min(Math.random(), 0.9)*16777215).toString(16);
