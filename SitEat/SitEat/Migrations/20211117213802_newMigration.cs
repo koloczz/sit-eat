@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SitEat.Migrations
 {
-    public partial class seed : Migration
+    public partial class newMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -193,7 +193,7 @@ namespace SitEat.Migrations
                     { 17, "Les Amis French restaurant in Warsaw, Poland Flam & Biere", "/img/27936997.jpg", "Les Amis", "Mon - Fri: 7:00 - 22:00<br>Sat - Sun: 12:00 - 24:00" },
                     { 18, "Experience authentic dining and world class entertainment when you visit Hard Rock Cafe Gdansk. With room for 100 guests, our spacious restaurant and lounge boasts two floors, a modern bar, and a large outdoor patio area. We are located in heart of Gdansk, on Długi Targ Street, between the magnificent four-arched Green Gate gatehouse—built as a palace for Polish monarchs—and Neptune Fountain, the most memorable fountain in Poland and one of the defining symbols of Gdansk. After a delicious meal of delectable American fare, take a stroll through musical history with an extensive collection of musical memorabilia you can only find at Hard Rock Cafe Gdansk.", "/img/28105968.jpg", "Hard Rock Cafe - Gdansk", "Mon - Fri: 7:00 - 22:00<br>Sat - Sun: 12:00 - 24:00" },
                     { 19, "Lorem ipsum", "/img/28029123.jpg", "Romantyczna Restauracja", "Mon - Fri: 7:00 - 22:00<br>Sat - Sun: 12:00 - 24:00" },
-                    { 11, "", "/img/26468459.jpg", "Enoteka Warszawska", "Mon - Fri: 7:00 - 22:00<br>Sat - Sun: 12:00 - 24:00" }
+                    { 11, "Great place to eat and chill.", "/img/26468459.jpg", "Enoteka Warszawska", "Mon - Fri: 7:00 - 22:00<br>Sat - Sun: 12:00 - 24:00" }
                 });
 
             migrationBuilder.InsertData(
@@ -210,55 +210,6 @@ namespace SitEat.Migrations
                     { 2, "Pizzeria" },
                     { 3, "Vegetarian" },
                     { 5, "Vietnamese" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "MenuItems",
-                columns: new[] { "Id", "Name", "Price", "RestaurantId" },
-                values: new object[,]
-                {
-                    { 1, "Item-R1-A", 1.23m, 1 },
-                    { 22, "Item-R3-F", 100.23m, 3 },
-                    { 21, "Item-R3-E", 100.23m, 3 },
-                    { 20, "Item-R3-D", 100.23m, 3 },
-                    { 19, "Item-R3-C", 100.23m, 3 },
-                    { 18, "Item-R3-B", 100.23m, 3 },
-                    { 17, "Item-R3-A", 100.23m, 3 },
-                    { 16, "Item-R2-H", 10.23m, 2 },
-                    { 15, "Item-R2-G", 10.23m, 2 },
-                    { 14, "Item-R2-F", 10.23m, 2 },
-                    { 13, "Item-R2-E", 10.23m, 2 },
-                    { 23, "Item-R3-G", 100.23m, 3 },
-                    { 11, "Item-R2-C", 10.23m, 2 },
-                    { 10, "Item-R2-B", 10.23m, 2 },
-                    { 12, "Item-R2-D", 10.23m, 2 },
-                    { 24, "Item-R3-H", 100.23m, 3 },
-                    { 2, "Item-R1-B", 1.23m, 1 },
-                    { 3, "Item-R1-C", 1.23m, 1 },
-                    { 4, "Item-R1-D", 1.23m, 1 },
-                    { 5, "Item-R1-E", 1.23m, 1 },
-                    { 6, "Item-R1-F", 1.23m, 1 },
-                    { 8, "Item-R1-H", 1.23m, 1 },
-                    { 7, "Item-R1-G", 1.23m, 1 },
-                    { 9, "Item-R2-A", 10.23m, 2 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Reviews",
-                columns: new[] { "Id", "Author", "RestaurantId", "Score", "Text" },
-                values: new object[,]
-                {
-                    { 11, "Karol", 2, 5, "I enjoyed every bit of it!" },
-                    { 9, "Ian", 2, 3, "Not great, not terrible" },
-                    { 8, "Helga", 2, 1, "I'm not saying that this place sells s***, but I wouldn't eat it again." },
-                    { 7, "Gregory", 2, 5, "Just wonderful!" },
-                    { 1, "Arnold", 1, 1, "It sucks!" },
-                    { 2, "Bernard", 1, 5, "Great place, would certainly eat at again." },
-                    { 3, "Ciril", 1, 3, "If only they had more variety. The quality is decent but I got bored of their food already." },
-                    { 4, "Dionisius", 1, 2, "Meh." },
-                    { 5, "Ergon", 1, 5, "I love this place! <3" },
-                    { 10, "Jeremy", 2, 5, "Truly amazing place, never ate such good food" },
-                    { 6, "Fred", 1, 4, "Decent food. Pretty cheap too." }
                 });
 
             migrationBuilder.CreateIndex(
