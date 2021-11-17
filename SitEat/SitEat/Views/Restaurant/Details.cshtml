@@ -49,14 +49,14 @@
     @foreach (var tableInfo in Model.TableInfos)
     {
         <div class="grid-item">
-            @*@if (tableInfo.IsTable)
+            @if (tableInfo.IsTable)
             {
                 <div class="with-table taken-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
             }
             else
             {
                 <div class="without-table"></div>
-            }*@
+            }
         </div>
     }
 </div>
