@@ -47,6 +47,7 @@ body {
 
 .banner-container {
   background-image: url("../img/26467404.jpg");
+  background-position:center;
   background-repeat: no-repeat;
   background-size: cover;
   height: max(35vh, 250px);
@@ -166,6 +167,16 @@ main {
   background-color: var(--main-div-background-color);
   padding: 2%;
   border-radius: var(--radius);
+}
+
+.description h2 {
+    position:relative;
+    margin-top: 0;
+}
+
+h2 span {
+    position: absolute;
+    top: -70px;
 }
 
 .flex-description {

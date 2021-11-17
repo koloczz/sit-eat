@@ -22,7 +22,9 @@ namespace SitEat.Controllers
 
         public IActionResult Index()
         {
+            var model = new IndexViewModel();
             var list = new List<RestaurantTagReviewViewModel>();
+            model.ListOfTags = _sitEatContext.Tags.Select(x => x.Text).ToList();
             var restaurants = _sitEatContext.Restaurants
                 .Include(r => r.Tags)
                 .Include(r => r.Reviews)
@@ -40,11 +42,12 @@ namespace SitEat.Controllers
                 viewModel.Tags = new();
                 foreach (var tag in restaurant.Tags)
                 {
-                    viewModel.Tags.Add(tag.Text);
+                    viewModel.Tags.Add(string.Concat(tag.Text, " "));
                 }
                 list.Add(viewModel);
             }
-            return View(list);
+            model.Restaurants = list.OrderByDescending(x => x.Rating).ToList();
+            return View(model);
         }
 
         public IActionResult Privacy()
