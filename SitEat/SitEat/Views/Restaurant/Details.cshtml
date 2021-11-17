@@ -10,19 +10,19 @@
             <a class="nav-link reservation-button" onclick="showModal()">Make&nbsp;reservation</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#name">Overview</a>
+            <a class="nav-link" href="#one">Overview</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#menu">Menu</a>
+            <a class="nav-link" href="#two">Menu</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#rating">Reviews</a>
+            <a class="nav-link" href="#three">Reviews</a>
         </li>
 }
 <!-- Restaurant name and description -->
 <div id="name" class="content">
     <section class="description">
-        <h2>@Html.DisplayFor(Model => Model.Name)</h2>
+        <h2><span id="one"></span>@Html.DisplayFor(Model => Model.Name)</h2>
         @Html.DisplayFor(Model => Model.Description)
     </section>
 </div>
@@ -30,7 +30,7 @@
 <!-- Restaurant menu -->
 <div id="menu" class="content">
     <section class="description">
-        <h2>Menu</h2>
+        <h2><span id="two"></span>Menu</h2>
         <ul class="food-menu-list">
             @foreach(var menuItem in Model.MenuItems)
             {
@@ -46,15 +46,19 @@
 <!-- Restaurant user reviews -->
 <div id="rating" class="content">
     <section class="description">
-        <h2>Reviews</h2>
+        <h2><span id="three"></span>Reviews</h2>
         <ul class="review-list">
             @foreach (var review in Model.Reviews)
             {
             <li class="review-item">
                 
-                    <div class="review-author">@review.Author wrote:</div>
-                    <div class="review-rating">Rating: <span class="star">&starf;</span> @review.Score</div>
-                    <div class="review-text">@review.Text</div>
+                <div class="review-author">@review.Author wrote:</div>
+                <div class="review-rating">@for (int i=0; i < Math.Floor((decimal)review.Score); i++)
+                {
+                    <span class="star">&starf;</span>
+                }
+                </div>
+                <div class="review-text">@review.Text</div>
             </li>
             }
         </ul>

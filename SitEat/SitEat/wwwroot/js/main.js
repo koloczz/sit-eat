@@ -47,6 +47,24 @@ function getAllSelectedTables() {
     }
 }
 
+function filter(target) {
+    var divs = document.getElementsByClassName('content');
+    for (var j = 0; j < divs.length; j++) {
+        divs[j].style.setProperty("display", "none");
+        var temp = divs[j].getElementsByClassName('tag-section')[0];
+        if (temp.textContent.includes(target.outerText)) {
+            divs[j].style.setProperty("display", "block");
+        }
+    }
+}
+
+function unfilter() {
+    var divs = document.getElementsByClassName('content');
+    for (var j = 0; j < divs.length; j++) {
+        divs[j].style.setProperty("display", "block");
+    }
+}
+
 function changeTheme() {
     var root = document.querySelector(":root");
     var randomColor = Math.floor(Math.min(Math.random(), 0.9)*16777215).toString(16);

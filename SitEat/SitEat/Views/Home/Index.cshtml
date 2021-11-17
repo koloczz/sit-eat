@@ -1,4 +1,4 @@
-﻿@model List<SitEat.Models.RestaurantTagReviewViewModel>
+﻿@model IndexViewModel
 
 @{
     ViewData["Title"] = "Home";
@@ -6,26 +6,18 @@
 @section Navbar2
 {
     <li class="nav-item">
-        <a class="nav-link" href="#">Browse&nbsp;All</a>
+        <a class="nav-link" href="#" onclick="unfilter()">Browse&nbsp;All</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Best&nbsp;Rated</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Featured</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Pizza</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">American</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Kebab</a>
-    </li>
+    @foreach (var t in Model.ListOfTags)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="filter(event.target)">@t</a>
+        </li>
+    }
+    
 }
 
-@foreach (var item in Model)
+@foreach (var item in Model.Restaurants)
 {
     <div class="content">
         <section class="flex-description" onclick="location.href='@Url.Action("Details","Restaurant", new {Id = item.Id})'">
@@ -37,7 +29,8 @@
                         @Html.DisplayFor(modelItem => tag)                    
                     }
             </p>
-            <p class="rating-section"> Rating: @for (int i=0; i < Math.Floor((decimal)item.Rating); i++)
+            <p class="rating-section"> Rating: 
+            @for (int i=0; i < Math.Floor((decimal)item.Rating); i++)
                 {
                     <span class="star">&starf;</span>
                 }
