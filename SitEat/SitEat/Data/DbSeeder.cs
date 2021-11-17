@@ -350,10 +350,6 @@ namespace SitEat.Data
                 new Tag { Id = 5, Text = "Vietnamese" }
                 );
 
-            //modelBuilder.Entity<Review>().HasData();
-            //modelBuilder.Entity<Table>().HasData();
-            //modelBuilder.Entity<Booking>().HasData();
-
         }
     }
 }
