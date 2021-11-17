@@ -41,7 +41,7 @@
             }
         </section>
         <div class="reservation-container">
-            <button class="reservation" onclick="location.href='@Url.Action("Details","Restaurant", new {Id = item.Id, IsDisplayed = true})'">Make reservation</button>
+            <button class="reservation" onclick="location.href='@Url.Action("Details","Restaurant", new {Id = item.Id, IsInstantReservationChosen = true})'">Make reservation</button>
         </div>
     </div>
 }

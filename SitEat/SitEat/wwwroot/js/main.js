@@ -10,6 +10,12 @@ function closeModal(element) {
     }
 }
 
+function instantShow() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    console.log("executed")
+}
+
 function stickToTop() {
     var stickyElem = document.querySelector(".navbar2");
     var parentElem = document.querySelector(".banner-container");
