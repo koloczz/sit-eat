@@ -34,7 +34,7 @@ namespace SitEat.Controllers
                 viewModel.Id = restaurant.Id;
                 viewModel.Name = restaurant.Name;
                 viewModel.ImagePath = restaurant.ImagePath;
-                viewModel.Rating = (double?)Math.Round((decimal)restaurant.Reviews.Average(rev => rev.Score), 2);
+                viewModel.Rating = Math.Round((double)restaurant.Reviews.Average(rev => rev.Score), 2);
                 viewModel.OpeningTimes = restaurant.OpeningTimes;
                 viewModel.Tags = new();
                 foreach (var tag in restaurant.Tags)
