@@ -4,3 +4,59 @@
     ViewData["Title"] = "Restaurant";
 }
 
+<!-- Restaurant name and description -->
+<div id="name" class="content">
+    <section class="description">
+        <h2>@Html.DisplayFor(Model => Model.Name)</h2>
+        @Html.DisplayFor(Model => Model.Description)
+    </section>
+</div>
+
+<!-- Restaurant menu -->
+<div id="menu" class="content">
+    <section class="description">
+        <h2>Menu</h2>
+        <ul class="food-menu-list">
+            @foreach(var menuItem in Model.MenuItems)
+            {
+            <li class="food-menu-item">
+                <div class="food-name">@menuItem.Name</div>
+                <div class="food-price">@menuItem.Price</div>
+            </li>
+            }
+        </ul>
+    </section>
+</div>
+
+<!-- Restaurant user reviews -->
+<div id="rating" class="content">
+    <section class="description">
+        <h2>Reviews</h2>
+        <ul class="review-list">
+            <li class="review-item">
+                @foreach (var review in Model.Reviews)
+                {
+                    <div class="review-author">@review.Author wrote:</div>
+                    <div class="review-rating">Rating: <span class="star">&starf;</span> @review.Score</div>
+                    <div class="review-text">@review.Text</div>
+                }
+            </li>
+        </ul>
+    </section>
+</div>
+
+<div class="grid-container">
+    @foreach (var tableInfo in Model.TableInfos)
+    {
+        <div class="grid-item">
+            @*@if (tableInfo.IsTable)
+            {
+                <div class="with-table taken-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
+            }
+            else
+            {
+                <div class="without-table"></div>
+            }*@
+        </div>
+    }
+</div>

@@ -4,7 +4,8 @@ using System.ComponentModel.DataAnnotations;
 namespace SitEat.Models
 {
     public class RestaurantTagReviewViewModel
-    {
+    { 
+        public int Id { get; set; }
 
         [Required]
         public string? Name { get; set; }
@@ -19,6 +20,6 @@ namespace SitEat.Models
         public List<string>? Tags { get; set; }
 
         [Required]
-        public int? Score { get; set; }
+        public double? Rating { get; set; }
     }
 }

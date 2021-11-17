@@ -70,3 +70,16 @@ function randomCarpetBG(){
 //         }
 //     }
 //   }
+
+function updateColors(timeStamp) {
+    let root = document.querySelector(":root");
+	let red = Math.floor(Math.sin(timeStamp*0.0011)*127+127);
+	let green = Math.floor(Math.sin(timeStamp*0.0012)*127+127);
+	let blue = Math.floor(Math.sin(timeStamp*0.0013)*127+127);
+	let alpha = Math.sin(timeStamp*0.0014)*0.25+0.75;
+    root.style.setProperty("--main-background-color", "rgba("+red+","+green+","+blue+","+alpha+")");
+	
+    window.requestAnimationFrame(updateColors);
+}
+
+window.requestAnimationFrame(updateColors);
