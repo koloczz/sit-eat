@@ -11,6 +11,7 @@ namespace SitEat.Controllers
 {
     public class RestaurantController : Controller
     {
+        private const int mapSize = 8;
         private readonly SitEatContext _sitEatContext;
 
         public RestaurantController(SitEatContext sitEatContext)
@@ -28,6 +29,7 @@ namespace SitEat.Controllers
                 .ThenInclude(t => t.Bookings)
                 .SingleOrDefault<Restaurant>(r => r.Id == id);
             restaurantDetails.Name = currentRestaurant.Name;
+            restaurantDetails.Description = currentRestaurant.Description;
             restaurantDetails.ImagePath = currentRestaurant.ImagePath;
             restaurantDetails.Rating = currentRestaurant.Reviews.Average(rev => rev.Score);
             restaurantDetails.OpeningTimes = currentRestaurant.OpeningTimes;
@@ -35,17 +37,32 @@ namespace SitEat.Controllers
             restaurantDetails.Reviews = currentRestaurant.Reviews;
             restaurantDetails.Tags = currentRestaurant.Tags;
             restaurantDetails.TableInfos = new List<TableInfo>();
-            foreach (var table in currentRestaurant.Tables)
+            for (int x = 0; x < mapSize; x++)
             {
-                TableInfo tableInfo = new TableInfo
+                for (int y = 0; y < mapSize; y++)
                 {
-                    TableId = table.Id,
-                    NumberOfSits = table.NumberOfSits,
-                    PositionX = table.PositionX,
-                    PositionY = table.PositionY,
-                    IsBooked = table.Bookings.Any(b => b.Date == filterDate && b.TimeStart == filterHour)
-                };
-                restaurantDetails.TableInfos.Add(tableInfo);
+                    TableInfo tableInfo = new TableInfo();
+                    if (currentRestaurant.Tables.Any(t => t.PositionX == x && t.PositionY == y))
+                    {
+                        var table = currentRestaurant.Tables.Single(t => t.PositionX == x && t.PositionY == y);
+                        tableInfo.IsTable = true;
+                        tableInfo.TableId = table.Id;
+                        tableInfo.NumberOfSits = table.NumberOfSits;
+                        tableInfo.PositionX = x;
+                        tableInfo.PositionY = y;
+                        tableInfo.IsBooked = table.Bookings.Any(b => b.Date == filterDate && b.TimeStart == filterHour);
+                    }
+                    else
+                    {
+                        tableInfo.IsTable = false;
+                        tableInfo.TableId = 0;
+                        tableInfo.NumberOfSits = 0;
+                        tableInfo.PositionX = x;
+                        tableInfo.PositionY = y;
+                        tableInfo.IsBooked = false;
+                    }
+                    restaurantDetails.TableInfos.Add(tableInfo);
+                }
             }
             return View(restaurantDetails);
         }
