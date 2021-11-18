@@ -13,7 +13,15 @@ function closeModal(element) {
 function instantShow() {
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
-    console.log("executed")
+}
+
+function toggleReservationButtons() {
+    var saveButton = document.getElementById("saveButton");
+    saveButton.disabled = false;
+    console.log("false")
+    var reservationButton = document.getElementById("reservationButton");
+    reservationButton.disabled = true;
+    console.log("true")
 }
 
 function stickToTop() {

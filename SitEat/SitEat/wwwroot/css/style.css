@@ -410,6 +410,15 @@ span.star {
   margin: 0.5rem;
 }
 
+button:disabled,
+button[disabled],
+button:disabled:hover,
+button[disabled]:hover {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
 @media screen and (min-width: 850px) {
   .reservation-data-input {
     flex-direction: row;
