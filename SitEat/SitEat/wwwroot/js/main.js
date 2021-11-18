@@ -117,6 +117,13 @@ function randomCarpetBG(){
 //     }
 //   }
 
+function LoadDetailPage(restaurantId, isInstantReservation) {
+    let textInputHour = document.getElementById("textInputHour");
+    let textInputPerson = document.getElementById("textInputPerson");
+    let datefield = document.getElementById("datefield");
+    window.location.href = `/Restaurant/Details?id=${restaurantId}&filterHour=${textInputHour.value}&filterDate=${datefield.value}&filterPeople=${textInputPerson.value}&isInstantReservationChosen=${isInstantReservation}`;
+}
+
 function updateColors(timeStamp) {
     let root = document.querySelector(":root");
 	let red = Math.floor(Math.sin(timeStamp*0.0011)*127+127);
