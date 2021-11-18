@@ -18,12 +18,13 @@ namespace SitEat.Controllers
         {
             _sitEatContext = sitEatContext;
         }
+
         [HttpPost]
-        public IActionResult Details(int id, int filterHour, DateTime filterDate, string tableIdstring, string userName, string userTel)
+        public IActionResult Details(int id, int filterHour, DateTime filterDate, string postInput, string userName, string userTel)
         {
             // might want to validate data first
 
-            int[] tableIds = tableIdstring.Split().Select(s => int.Parse(s)).ToArray();
+            int[] tableIds = postInput.Split().Select(s => int.Parse(s)).ToArray();
             var newBookings = new List<Booking>();
 
             foreach (var tableId in tableIds)

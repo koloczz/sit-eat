@@ -128,10 +128,9 @@
                     }
                     </div>
                     <form class="reservation-data-input" method="post" action="">
-                        <input id="filterHourHidden" name="filterHour" type="number" style="display:none"/>
-                        <input id="filterPeopleHidden" name="filterPeople" type="number" style="display:none"/>
-                        <input id="filterDateHidden" name="filterDate" type="date" style="display:none"/>
-                        <input id="postInput" name="postInput" type="text" style="display:none"/>
+                        <input id="filterHourHidden" name="filterHour" type="number" style="display:none" value=""/>
+                        <input id="filterDateHidden" name="filterDate" type="date" style="display:none" value=""/>
+                        <input id="postInput" name="postInput" type="text" style="display:none" value=""/>
                         <input id="userName" name="userName" type="text" placeholder="Your name here" pattern="^\s*\S+.*$" required/>
                         <input id="userTel" name="userTel" type="tel" placeholder="Your phone number" pattern="^\d{9}$" required/>
                         <input type="submit" id="reservationButton" class="reservation" onclick="getAllSelectedTables()" value="Submit reservation"/>
@@ -178,10 +177,9 @@ else {
                     }
                     </div>
                     <form class="reservation-data-input" method="post">
-                        <input id="filterHourHidden" name="filterHour" type="number" style="display:none"/>
-                        <input id="filterPeopleHidden" name="filterPeople" type="number" style="display:none"/>
-                        <input id="filterDateHidden" name="filterDate" type="date" style="display:none"/>
-                        <input id="postInput" name="postInput" type="text" style="display:none"/>
+                        <input id="filterHourHidden" name="filterHour" type="number" style="display:none" value=""/>
+                        <input id="filterDateHidden" name="filterDate" type="date" style="display:none" value=""/>
+                        <input id="postInput" name="postInput" type="text" style="display:none" value=""/>
                         <input id="userName" name="userName" type="text" placeholder="Your name here" pattern="^\s*\S+.*$" required/>
                         <input id="userTel" name="userTel" type="tel" placeholder="Your phone number" pattern="^\d{9}$" required/>
                         <input type="submit" id="reservationButton" class="reservation" onclick="getAllSelectedTables()" value="Submit reservation">

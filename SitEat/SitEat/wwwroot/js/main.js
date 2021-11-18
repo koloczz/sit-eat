@@ -51,7 +51,17 @@ function makeSelection(target) {
     }
 }
 
+function transferData() {
+    var hours = document.getElementById("filterHour").value;
+    var postHours = document.getElementById("filterHourHidden");
+    postHours.value = hours;
+    var date = document.getElementById("filterDatefield").value;
+    var postDate = document.getElementById("filterDateHidden");
+    postDate.value = date;
+}
+
 function getAllSelectedTables() {
+    transferData();
     var tables = document.getElementsByClassName('selected-table');
     var postInput = document.getElementById('postInput');
     for (var i = 0; i < tables.length; i++) {
