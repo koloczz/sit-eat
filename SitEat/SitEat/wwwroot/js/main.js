@@ -119,5 +119,4 @@ function updateColors(timeStamp) {
 	
     window.requestAnimationFrame(updateColors);
 }
-
 //window.requestAnimationFrame(updateColors);

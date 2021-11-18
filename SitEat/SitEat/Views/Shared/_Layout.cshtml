@@ -57,7 +57,7 @@
             </p>
             <p>               
                 <i class="fa fa-calendar" style="font-size:24px"></i>
-                <input id="datefield" type="date" name="filterDate" value="">
+                <input id="datefield" type="date" name="filterDate" value="@DateTime.Today.ToString("yyyy-MM-dd")" min="@DateTime.Today.ToString("yyyy-MM-dd")" max="@DateTime.Today.AddMonths(1).ToString("yyyy-MM-dd")">
             </p>
             
         </div>
