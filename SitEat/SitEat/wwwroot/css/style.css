@@ -398,10 +398,15 @@ span.star {
   margin: 0.5rem;
 }
 
-.reservation-data-input input,
-.reservation-data-input button {
+.reservation-data-input input {
   border-radius: var(--radius);
   padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.reservation-data-input button {
+  border-radius: var(--radius);
+  padding: 0 1rem;
   margin: 0.5rem;
 }
 

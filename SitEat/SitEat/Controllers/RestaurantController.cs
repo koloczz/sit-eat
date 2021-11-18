@@ -28,6 +28,7 @@ namespace SitEat.Controllers
                 .Include(r => r.Tables)
                 .ThenInclude(t => t.Bookings)
                 .SingleOrDefault<Restaurant>(r => r.Id == id);
+            restaurantDetails.Id = currentRestaurant.Id;
             restaurantDetails.Name = currentRestaurant.Name;
             restaurantDetails.Description = currentRestaurant.Description;
             restaurantDetails.ImagePath = currentRestaurant.ImagePath;
