@@ -28,6 +28,7 @@ namespace SitEat.Controllers
                 .Include(r => r.Tables)
                 .ThenInclude(t => t.Bookings)
                 .SingleOrDefault<Restaurant>(r => r.Id == id);
+            restaurantDetails.Id = currentRestaurant.Id;
             restaurantDetails.Name = currentRestaurant.Name;
             restaurantDetails.Description = currentRestaurant.Description;
             restaurantDetails.ImagePath = currentRestaurant.ImagePath;
@@ -50,7 +51,9 @@ namespace SitEat.Controllers
                         tableInfo.NumberOfSits = table.NumberOfSits;
                         tableInfo.PositionX = x;
                         tableInfo.PositionY = y;
+                        var bookings = table.Bookings.ToArray();
                         tableInfo.IsBooked = table.Bookings.Any(b => b.Date == filterDate && b.TimeStart == filterHour);
+                        
                     }
                     else
                     {

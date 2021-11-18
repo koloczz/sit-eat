@@ -5,6 +5,8 @@ namespace SitEat.Models
 {
     public class RestaurantDetailsViewModel
     {
+        [Required]
+        public int? Id { get; set; }
 
         [Required]
         public string? Name { get; set; }

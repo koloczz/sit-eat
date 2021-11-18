@@ -40,7 +40,36 @@ namespace SitEat.Data
                     GenerateMenuItems(context, random);
                 }
 
+                Restaurant firstRestaurant = context.Restaurants.Include(r => r.Tags).First();
+                if (firstRestaurant.Tags.Count == 0)
+                {
+                    GenerateTagsForRestaurants(context, random);
+                }
+
             }
+        }
+
+        private static void GenerateTagsForRestaurants(SitEatContext context, Random random)
+        {
+            var restaurants = context.Restaurants.Include(r => r.Tags);
+            var tags = context.Tags.ToList();
+            foreach (var restaurant in restaurants)
+            {
+                foreach (var tag in tags)
+                {
+                    if (random.NextDouble() < 0.3)
+                    {
+                        restaurant.Tags.Add(tag);
+                    }
+                }
+                // make sure that if no tags are chosen, a random one is added
+                if (restaurant.Tags.Count == 0)
+                {
+                    restaurant.Tags.Add(tags[random.Next(tags.Count)]);
+                }
+            }
+            context.Restaurants.UpdateRange(restaurants);
+            context.SaveChanges();
         }
 
         private static void GenerateMenuItems(SitEatContext context, Random random)
