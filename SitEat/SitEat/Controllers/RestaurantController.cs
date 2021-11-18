@@ -24,7 +24,7 @@ namespace SitEat.Controllers
         {
             // might want to validate data first
 
-            int[] tableIds = postInput.Split().Select(s => int.Parse(s)).ToArray();
+            int[] tableIds = postInput.Split('_').Select(s => int.Parse(s)).ToArray();
             var newBookings = new List<Booking>();
 
             foreach (var tableId in tableIds)

@@ -64,9 +64,7 @@ function getAllSelectedTables() {
     transferData();
     var tables = document.getElementsByClassName('selected-table');
     var postInput = document.getElementById('postInput');
-    for (var i = 0; i < tables.length; i++) {
-        postInput.value += tables[i].id + " ";
-    }
+    postInput.value = Array.from(tables).map(t => t.id).join('_');
 }
 
 function filter(target) {
