@@ -73,11 +73,12 @@
                     <div id="table-filter">
                         <form class="reservation-data-input">
                             <p>&#x1F553;</p>
-                            <input type="number" name="hour" class="input" id="filterHour" min="0" max="23" value="12" onchange="toggleReservationButtons()">
+                            <input type="number" name="filterHour" class="input" id="filterHour" min="0" max="23" value="@Model.FilterHour" onchange="toggleReservationButtons()">
+                            <input type="text" name="IsInstantReservationChosen" style="display:none" value="true">
                             <p>&#x1f464</p>
-                            <input type="number" name="people" class="input" id="filterPersonCount" min="1" max="16" value="1" onchange="toggleReservationButtons()">
-                            <input id="filterDatefield" type="date" name="date-time" value="" onchange="toggleReservationButtons()">
-                            <button id="saveButton" class="reservation" onclick="location.href='@Url.Action("Details","Restaurant", new {Id = Model.Id})'+'&IsInstantReservationChosen = true'" disabled>Save</button>
+                            <input type="number" name="filterPeople" class="input" id="filterPersonCount" min="1" max="16" value="@Model.FilterPeople" onchange="toggleReservationButtons()">
+                            <input id="filterDatefield" type="date" name="filterDate" value="@Model.FilterDate.Value.Date.ToString("yyyy-MM-dd")" onchange="toggleReservationButtons()">
+                            <button id="saveButton" class="reservation" onclick="location.href='@Url.Action("Details","Restaurant", new {Id = Model.Id})" disabled>Save</button>
                         </form>
                     </div>
                     <div class="grid-container">
@@ -119,11 +120,12 @@ else {
                     <div id="table-filter">
                         <form class="reservation-data-input">
                             <p>&#x1F553;</p>
-                            <input type="number" name="hour" class="input" id="filterHour" min="0" max="23" value="12" onchange="toggleReservationButtons()">
+                            <input type="number" name="filterHour" class="input" id="filterHour" min="0" max="23" value="@Model.FilterHour" onchange="toggleReservationButtons()">
+                            <input type="text" name="IsInstantReservationChosen" style="display:none" value="true">
                             <p>&#x1f464</p>
-                            <input type="number" name="people" class="input" id="filterPersonCount" min="1" max="16" value="1" onchange="toggleReservationButtons()">
-                            <input id="filterDatefield" type="date" name="date-time" value="" onchange="toggleReservationButtons()">
-                            <button id="saveButton" class="reservation" onclick="location.href='@Url.Action("Details","Restaurant", new {Id = Model.Id})'+'&IsInstantReservationChosen = true'" disabled>Save</button>
+                            <input type="number" name="filterPeople" class="input" id="filterPersonCount" min="1" max="16" value="@Model.FilterPeople" onchange="toggleReservationButtons()">
+                            <input id="filterDatefield" type="date" name="filterDate" value="@Model.FilterDate.Value.Date.ToString("yyyy-MM-dd")" onchange="toggleReservationButtons()">
+                            <button id="saveButton" class="reservation" onclick="location.href='@Url.Action("Details","Restaurant", new {Id = Model.Id})" disabled>Save</button>
                         </form>
                     </div>
                     <div class="grid-container">

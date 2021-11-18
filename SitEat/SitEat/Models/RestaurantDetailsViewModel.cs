@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SitEat.Models
@@ -36,5 +37,11 @@ namespace SitEat.Models
         public ICollection<Review>? Reviews { get; set; }
 
         public bool IsInstantReservationChosen { get; set; }
+
+        public int? FilterHour { get; set; }
+
+        public DateTime? FilterDate { get; set; }
+
+        public int? FilterPeople { get; set; }
     }
 }
