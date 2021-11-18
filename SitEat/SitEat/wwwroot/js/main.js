@@ -93,10 +93,10 @@ function changeTheme() {
 
 function randomCarpetBG(){
     var random= Math.floor(Math.random() * 4) + 0;
-    var bigSize = ["url('../SitAndEat/Images/carpet1.jpg')",
-                    "url('../SitAndEat/Images/carpet2.jpg')",
-                    "url('../SitAndEat/Images/carpet3.jpg')",
-                    "url('../SitAndEat/Images/carpet4.jpg')"];
+    var bigSize = ["url('/img/carpet1.jpg')",
+                    "url('/img/carpet2.jpg')",
+                    "url('/img/carpet3.jpg')",
+                    "url('/img/carpet4.jpg')"];
     var myArr = document.getElementsByClassName("grid-item");
     for (const element of myArr) {
         element.style.backgroundImage=bigSize[random];

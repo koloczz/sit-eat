@@ -42,7 +42,7 @@ namespace SitEat.Controllers
 
             _sitEatContext.AddRange(newBookings);
             _sitEatContext.SaveChanges();
-            return View();
+            return RedirectToAction("Details");
         }
 
         public IActionResult Details(int id, int? filterHour, DateTime? filterDate, int? filterPeople, bool isInstantReservationChosen = false)
@@ -64,6 +64,9 @@ namespace SitEat.Controllers
             restaurantDetails.MenuItems = currentRestaurant.MenuItems;
             restaurantDetails.Reviews = currentRestaurant.Reviews;
             restaurantDetails.Tags = currentRestaurant.Tags;
+            restaurantDetails.FilterDate = (filterDate ?? DateTime.Today);
+            restaurantDetails.FilterHour = (filterHour ?? 12);
+            restaurantDetails.FilterPeople = (filterPeople ?? 1);
             restaurantDetails.TableInfos = new List<TableInfo>();
             for (int x = 0; x < mapSize; x++)
             {
@@ -79,7 +82,7 @@ namespace SitEat.Controllers
                         tableInfo.PositionX = x;
                         tableInfo.PositionY = y;
                         var bookings = table.Bookings.ToArray();
-                        tableInfo.IsBooked = table.Bookings.Any(b => b.Date == filterDate && b.TimeStart == filterHour);
+                        tableInfo.IsBooked = table.Bookings.Any(b => b.Date == restaurantDetails.FilterDate && b.TimeStart == restaurantDetails.FilterHour);
                         
                     }
                     else
@@ -95,9 +98,6 @@ namespace SitEat.Controllers
                 }
             }
             restaurantDetails.IsInstantReservationChosen = isInstantReservationChosen;
-            restaurantDetails.FilterDate = (filterDate ?? DateTime.Today);
-            restaurantDetails.FilterHour = (filterHour ?? 12);
-            restaurantDetails.FilterPeople = (filterPeople ?? 1);
             return View(restaurantDetails);
         }
     }
