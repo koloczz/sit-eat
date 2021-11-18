@@ -51,7 +51,9 @@ namespace SitEat.Controllers
                         tableInfo.NumberOfSits = table.NumberOfSits;
                         tableInfo.PositionX = x;
                         tableInfo.PositionY = y;
+                        var bookings = table.Bookings.ToArray();
                         tableInfo.IsBooked = table.Bookings.Any(b => b.Date == filterDate && b.TimeStart == filterHour);
+                        
                     }
                     else
                     {
