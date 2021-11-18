@@ -10,6 +10,12 @@ function closeModal(element) {
     }
 }
 
+function instantShow() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    console.log("executed")
+}
+
 function stickToTop() {
     var stickyElem = document.querySelector(".navbar2");
     var parentElem = document.querySelector(".banner-container");
@@ -44,6 +50,24 @@ function getAllSelectedTables() {
     var postInput = document.getElementById('postInput');
     for (var i = 0; i < tables.length; i++) {
         postInput.value += tables[i].id + ",";
+    }
+}
+
+function filter(target) {
+    var divs = document.getElementsByClassName('content');
+    for (var j = 0; j < divs.length; j++) {
+        divs[j].style.setProperty("display", "none");
+        var temp = divs[j].getElementsByClassName('tag-section')[0];
+        if (temp.textContent.includes(target.outerText)) {
+            divs[j].style.setProperty("display", "block");
+        }
+    }
+}
+
+function unfilter() {
+    var divs = document.getElementsByClassName('content');
+    for (var j = 0; j < divs.length; j++) {
+        divs[j].style.setProperty("display", "block");
     }
 }
 

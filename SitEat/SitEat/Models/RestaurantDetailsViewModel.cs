@@ -32,5 +32,7 @@ namespace SitEat.Models
 
         [Required]
         public ICollection<Review>? Reviews { get; set; }
+
+        public bool IsInstantReservationChosen { get; set; }
     }
 }

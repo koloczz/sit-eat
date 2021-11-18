@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,7 +14,16 @@ namespace SitEat
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var app = CreateHostBuilder(args).Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                SitEat.Data.ProceduralDbSeeder.Seed(services);
+            }
+
+            app.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

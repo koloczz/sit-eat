@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SitEat.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SitEat.Data
 {
@@ -349,10 +345,6 @@ namespace SitEat.Data
                 new Tag { Id = 4, Text = "Chinese" },
                 new Tag { Id = 5, Text = "Vietnamese" }
                 );
-
-            //modelBuilder.Entity<Review>().HasData();
-            //modelBuilder.Entity<Table>().HasData();
-            //modelBuilder.Entity<Booking>().HasData();
 
         }
     }
