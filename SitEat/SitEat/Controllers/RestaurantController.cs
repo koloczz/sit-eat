@@ -20,20 +20,27 @@ namespace SitEat.Controllers
         }
 
         [HttpPost]
-        public IActionResult Details(int id, int filterHour, DateTime filterDate, int tableId, string userName, string userTel)
+        public IActionResult Details(int id, int filterHour, DateTime filterDate, string tableIdstring, string userName, string userTel)
         {
-            // might want to verify data first
+            // might want to validate data first
 
-            var newBooking = new Booking
+            int[] tableIds = tableIdstring.Split().Select(s => int.Parse(s)).ToArray();
+            var newBookings = new List<Booking>();
+
+            foreach (var tableId in tableIds)
             {
-                TableId = tableId,
-                Date = filterDate,
-                TimeStart = filterHour,
-                Name = userName,
-                Telephone = userTel
-            };
+                var newBooking = new Booking
+                {
+                    TableId = tableId,
+                    Date = filterDate,
+                    TimeStart = filterHour,
+                    Name = userName,
+                    Telephone = userTel
+                };
+                newBookings.Add(newBooking);
+            }
 
-            _sitEatContext.Add(newBooking);
+            _sitEatContext.AddRange(newBookings);
             _sitEatContext.SaveChanges();
             return View();
         }
