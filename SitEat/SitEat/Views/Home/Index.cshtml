@@ -17,6 +17,31 @@
     
 }
 
+@section floatButton
+{
+   -<form>
+        <div id="float">
+            
+            <p>
+            &#x1F553;
+            <input type="number" class="input" id="textInputHour" name="filterHour" value="12">
+            <input class="slidecontainer" type="range" min="0" max="23" value="12" class="slider" id="myRange" onchange="updateTextInput(this.value)">
+                
+            </p>
+            <p>
+                &#x1f464
+                <input type="number" class="input" id="textInputPerson" name="filterPeople" value="1">
+                <input class="slidecontainer" type="range" min="1" max="16" value="1" class="slider" id="myRange" onchange="updateTextInput2(this.value)">            
+            </p>
+            <p>               
+                <i class="fa fa-calendar" style="font-size:24px"></i>
+                <input id="datefield" type="date" name="filterDate" value="@DateTime.Today.ToString("yyyy-MM-dd")" min="@DateTime.Today.ToString("yyyy-MM-dd")" max="@DateTime.Today.AddMonths(1).ToString("yyyy-MM-dd")">
+            </p>
+            
+        </div>
+        </form>  
+}
+
 @foreach (var item in Model.Restaurants)
 {
     <div class="content">
