@@ -89,5 +89,9 @@ function updateColors(timeStamp) {
 	
     window.requestAnimationFrame(updateColors);
 }
-
+function dateTimeNow{
+    var today = dateTimeNow();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    return date;
+}
 //window.requestAnimationFrame(updateColors);
