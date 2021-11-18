@@ -84,14 +84,18 @@
                     @foreach (var tableInfo in Model.TableInfos)
                     {
                         <div class="grid-item">
-                        @if (tableInfo.IsTable)
-                        {
-                            <div class="with-table taken-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
-                        }
-                        else
-                        {
-                            <div class="without-table"></div>
-                        }
+                            @if (tableInfo.IsTable && tableInfo.IsBooked)
+                            {
+                                <div class="with-table taken-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
+                            }
+                            else if (tableInfo.IsTable)
+                            {
+                                <div class="with-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
+                            }
+                            else
+                            {
+                                <div class="without-table"></div>
+                            }
                         </div>
                     }
                     </div>
@@ -126,14 +130,18 @@ else {
                     @foreach (var tableInfo in Model.TableInfos)
                     {
                         <div class="grid-item">
-                        @if (tableInfo.IsTable)
-                        {
-                            <div class="with-table taken-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
-                        }
-                        else
-                        {
-                            <div class="without-table"></div>
-                        }
+                        @if (tableInfo.IsTable && tableInfo.IsBooked)
+                            {
+                                <div class="with-table taken-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
+                            }
+                            else if (tableInfo.IsTable)
+                            {
+                                <div class="with-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
+                            }
+                            else
+                            {
+                                <div class="without-table"></div>
+                            }
                         </div>
                     }
                     </div>
