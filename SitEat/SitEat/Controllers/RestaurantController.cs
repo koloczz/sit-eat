@@ -18,6 +18,26 @@ namespace SitEat.Controllers
         {
             _sitEatContext = sitEatContext;
         }
+
+        [HttpPost]
+        public IActionResult Details(int id, int filterHour, DateTime filterDate, int tableId, string userName, string userTel)
+        {
+            // might want to verify data first
+
+            var newBooking = new Booking
+            {
+                TableId = tableId,
+                Date = filterDate,
+                TimeStart = filterHour,
+                Name = userName,
+                Telephone = userTel
+            };
+
+            _sitEatContext.Add(newBooking);
+            _sitEatContext.SaveChanges();
+            return View();
+        }
+
         public IActionResult Details(int id, int filterHour, DateTime filterDate, bool isInstantReservationChosen = false)
         {
             var restaurantDetails = new RestaurantDetailsViewModel();
