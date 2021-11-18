@@ -55,7 +55,7 @@ function getAllSelectedTables() {
     var tables = document.getElementsByClassName('selected-table');
     var postInput = document.getElementById('postInput');
     for (var i = 0; i < tables.length; i++) {
-        postInput.value += tables[i].id + ",";
+        postInput.value += tables[i].id + " ";
     }
 }
 

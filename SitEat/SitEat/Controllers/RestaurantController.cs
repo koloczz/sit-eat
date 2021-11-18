@@ -18,7 +18,7 @@ namespace SitEat.Controllers
         {
             _sitEatContext = sitEatContext;
         }
-        public IActionResult Details(int id, int filterHour, DateTime filterDate, int filterPeople, bool isInstantReservationChosen = false)
+        public IActionResult Details(int id, int? filterHour, DateTime? filterDate, int? filterPeople, bool isInstantReservationChosen = false)
         {
             var restaurantDetails = new RestaurantDetailsViewModel();
             Restaurant currentRestaurant = _sitEatContext.Restaurants
@@ -68,9 +68,9 @@ namespace SitEat.Controllers
                 }
             }
             restaurantDetails.IsInstantReservationChosen = isInstantReservationChosen;
-            restaurantDetails.FilterDate = filterDate;
-            restaurantDetails.FilterHour = filterHour;
-            restaurantDetails.FilterPeople = filterPeople;
+            restaurantDetails.FilterDate = (filterDate ?? DateTime.Today);
+            restaurantDetails.FilterHour = (filterHour ?? 12);
+            restaurantDetails.FilterPeople = (filterPeople ?? 1);
             return View(restaurantDetails);
         }
     }

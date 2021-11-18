@@ -71,7 +71,7 @@
                     <span class="close">&times;</span>
 
                     <div id="table-filter">
-                        <form class="reservation-data-input">
+                        <form class="reservation-data-input" method="post">
                             <p>&#x1F553;</p>
                             <input type="number" name="filterHour" class="input" id="filterHour" min="0" max="23" value="@Model.FilterHour" onchange="toggleReservationButtons()">
                             <input type="text" name="IsInstantReservationChosen" style="display:none" value="true">
@@ -91,7 +91,7 @@
                             }
                             else if (tableInfo.IsTable)
                             {
-                                <div class="with-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
+                                <div id="@tableInfo.TableId" class="with-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
                             }
                             else
                             {
@@ -100,11 +100,14 @@
                         </div>
                     }
                     </div>
-                    <form class="reservation-data-input">
-                        <input id="postInput" type="text" style="display:none" required/>
-                        <input id="userName" type="text" placeholder="Your name here" pattern="^\s*\S+.*$" required/>
-                        <input id="userTel" type="tel" placeholder="Your phone number" pattern="^\d{9}$" required/>
-                        <button id="reservationButton" class="reservation" onclick="getAllSelectedTables()">Submit reservation</button>
+                    <form class="reservation-data-input" method="post" action="">
+                        <input id="filterHourHidden" name="filterHour" type="number" style="display:none"/>
+                        <input id="filterPeopleHidden" name="filterPeople" type="number" style="display:none"/>
+                        <input id="filterDateHidden" name="filterDate" type="date" style="display:none"/>
+                        <input id="postInput" name="postInput" type="text" style="display:none"/>
+                        <input id="userName" name="userName" type="text" placeholder="Your name here" pattern="^\s*\S+.*$" required/>
+                        <input id="userTel" name="userTel" type="tel" placeholder="Your phone number" pattern="^\d{9}$" required/>
+                        <input type="submit" id="reservationButton" class="reservation" onclick="getAllSelectedTables()" value="Submit reservation"/>
                     </form>
 
                 </div>
@@ -118,7 +121,7 @@ else {
                     <span class="close">&times;</span>
 
                     <div id="table-filter">
-                        <form class="reservation-data-input">
+                        <form class="reservation-data-input" method="post">
                             <p>&#x1F553;</p>
                             <input type="number" name="filterHour" class="input" id="filterHour" min="0" max="23" value="@Model.FilterHour" onchange="toggleReservationButtons()">
                             <input type="text" name="IsInstantReservationChosen" style="display:none" value="true">
@@ -138,7 +141,7 @@ else {
                             }
                             else if (tableInfo.IsTable)
                             {
-                                <div class="with-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
+                                <div id="@tableInfo.TableId" class="with-table" onclick="makeSelection(event.target)">@tableInfo.NumberOfSits</div>
                             }
                             else
                             {
@@ -147,11 +150,14 @@ else {
                         </div>
                     }
                     </div>
-                    <form class="reservation-data-input">
-                        <input id="postInput" type="text" style="display:none" required/>
-                        <input id="userName" type="text" placeholder="Your name here" pattern="^\s*\S+.*$" required/>
-                        <input id="userTel" type="tel" placeholder="Your phone number" pattern="^\d{9}$" required/>
-                        <button id="reservationButton" class="reservation" onclick="getAllSelectedTables()">Submit reservation</button>
+                    <form class="reservation-data-input" method="post">
+                        <input id="filterHourHidden" name="filterHour" type="number" style="display:none"/>
+                        <input id="filterPeopleHidden" name="filterPeople" type="number" style="display:none"/>
+                        <input id="filterDateHidden" name="filterDate" type="date" style="display:none"/>
+                        <input id="postInput" name="postInput" type="text" style="display:none"/>
+                        <input id="userName" name="userName" type="text" placeholder="Your name here" pattern="^\s*\S+.*$" required/>
+                        <input id="userTel" name="userTel" type="tel" placeholder="Your phone number" pattern="^\d{9}$" required/>
+                        <input type="submit" id="reservationButton" class="reservation" onclick="getAllSelectedTables()" value="Submit reservation">
                     </form>
 
                 </div>
