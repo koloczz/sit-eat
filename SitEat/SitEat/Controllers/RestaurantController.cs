@@ -27,13 +27,13 @@ namespace SitEat.Controllers
                 || userName.Length == 0
                 || userTel.Length == 0)
             {
-                return RedirectToAction("Details");
+                return RedirectToAction("Details", new { id = id });
             }
 
             string[] tableIdStrings = postInput.Split('_');
             if (tableIdStrings.Length == 0)
             {
-                return RedirectToAction("Details");
+                return RedirectToAction("Details", new { id = id });
             }
             var tableIds = new List<int>();
             foreach (var stringId in tableIdStrings)
@@ -41,7 +41,7 @@ namespace SitEat.Controllers
                 int value;
                 if (!int.TryParse(stringId, out value))
                 {
-                    return RedirectToAction("Details");
+                    return RedirectToAction("Details", new { id = id });
                 }
                 tableIds.Add(value);
             }
@@ -62,7 +62,7 @@ namespace SitEat.Controllers
 
             _sitEatContext.AddRange(newBookings);
             _sitEatContext.SaveChanges();
-            return RedirectToAction("Details");
+            return RedirectToAction("Details", new { id = id });
         }
 
         public IActionResult Details(int id, int? filterHour, DateTime? filterDate, int? filterPeople, bool isInstantReservationChosen = false)
