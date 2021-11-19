@@ -382,7 +382,7 @@ span.star {
   margin: 0 0.5rem;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 #table-filter input {
@@ -398,16 +398,18 @@ span.star {
   margin: 0.5rem;
 }
 
-.reservation-data-input input {
+.reservation-data-input input,
+#table-filter input {
   border-radius: var(--radius);
   padding: 0.5rem;
   margin: 0.5rem;
 }
 
-.reservation-data-input button {
-  border-radius: var(--radius);
-  padding: 0 1rem;
-  margin: 0.5rem;
+.reservation-data-input button,
+#table-filter button {
+    border-radius: var(--radius);
+    padding: 0 1rem;
+    margin: 0.5rem;
 }
 
 button:disabled,
@@ -420,10 +422,10 @@ button[disabled]:hover {
 }
 
 @media screen and (min-width: 850px) {
-  .reservation-data-input {
-    flex-direction: row;
-    justify-content: end;
-  }
+    .reservation-data-input, .table-filter {
+        flex-direction: row;
+        justify-content: end;
+    }
 }
 
 @media screen and (min-width: 700px) {
