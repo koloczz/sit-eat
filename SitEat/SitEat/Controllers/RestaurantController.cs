@@ -20,11 +20,31 @@ namespace SitEat.Controllers
         }
 
         [HttpPost]
-        public IActionResult Details(int id, int filterHour, DateTime filterDate, string postInput, string userName, string userTel)
+        public IActionResult Details(int id, int filterHour, DateTime? filterDate, string postInput, string userName, string userTel)
         {
-            // might want to validate data first
+            if (_sitEatContext.Restaurants.Find(id) == null
+                || filterDate == null
+                || userName.Length == 0
+                || userTel.Length == 0)
+            {
+                return RedirectToAction("Details");
+            }
 
-            int[] tableIds = postInput.Split('_').Select(s => int.Parse(s)).ToArray();
+            string[] tableIdStrings = postInput.Split('_');
+            if (tableIdStrings.Length == 0)
+            {
+                return RedirectToAction("Details");
+            }
+            var tableIds = new List<int>();
+            foreach (var stringId in tableIdStrings)
+            {
+                int value;
+                if (!int.TryParse(stringId, out value))
+                {
+                    return RedirectToAction("Details");
+                }
+                tableIds.Add(value);
+            }
             var newBookings = new List<Booking>();
 
             foreach (var tableId in tableIds)
@@ -32,7 +52,7 @@ namespace SitEat.Controllers
                 var newBooking = new Booking
                 {
                     TableId = tableId,
-                    Date = filterDate,
+                    Date = filterDate.Value,
                     TimeStart = filterHour,
                     Name = userName,
                     Telephone = userTel
