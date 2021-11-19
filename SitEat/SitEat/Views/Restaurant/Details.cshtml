@@ -21,7 +21,7 @@
         </li>
 }
 
-@section floatButton
+@*@section floatButton
 {
    <form>
         <div id="float">
@@ -44,7 +44,7 @@
             
     </div>
     </form>  
-}
+}*@
 
 <!-- Restaurant name and description -->
 <div id="name" class="content">
@@ -131,7 +131,7 @@
                         <input id="postInput" name="postInput" type="text" style="display:none" value=""/>
                         <input id="userName" name="userName" type="text" placeholder="Your name here" pattern="^\s*\S+.*$" required/>
                         <input id="userTel" name="userTel" type="tel" placeholder="Your phone number" pattern="^\d{9}$" required/>
-                        <input type="submit" id="reservationButton" class="reservation" onclick="getAllSelectedTables()" value="Submit reservation"/>
+                        <input type="submit" id="reservationButton" class="reservation" onclick="getAllSelectedTables()" value="Submit reservation" disabled/>
                     </form>
 
                 </div>
@@ -178,7 +178,7 @@ else {
                         <input id="postInput" name="postInput" type="text" style="display:none" value=""/>
                         <input id="userName" name="userName" type="text" placeholder="Your name here" pattern="^\s*\S+.*$" required/>
                         <input id="userTel" name="userTel" type="tel" placeholder="Your phone number" pattern="^\d{9}$" required/>
-                        <input type="submit" id="reservationButton" class="reservation" onclick="getAllSelectedTables()" value="Submit reservation">
+                        <input type="submit" id="reservationButton" class="reservation" onclick="getAllSelectedTables()" value="Submit reservation" disabled>
                     </form>
 
                 </div>

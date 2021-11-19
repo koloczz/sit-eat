@@ -49,6 +49,19 @@ function makeSelection(target) {
     if (!target.classList.contains("taken-table")) {
         target.classList.toggle("selected-table");
     }
+    var desired = document.getElementById("filterPersonCount").value;
+    var chosen = document.getElementsByClassName("selected-table");
+    var button = document.getElementById("reservationButton");
+    var sum = 0;
+    for (var i = 0; i < chosen.length; i++) {
+        sum += parseInt(chosen[i].textContent);
+    }
+    if (sum >= desired) {
+        button.disabled = false;
+    }
+    else {
+        button.disabled = true;
+    }
 }
 
 function transferData() {

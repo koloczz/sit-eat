@@ -412,6 +412,7 @@ span.star {
     margin: 0.5rem;
 }
 
+.reservation-data-input input:disabled,
 button:disabled,
 button[disabled],
 button:disabled:hover,
