@@ -6,6 +6,6 @@ namespace SitEat.Models
     {
         public List<string> ListOfTags { get; set; }
 
-        public List<RestaurantTagReviewViewModel> Restaurants { get; set;}
+        public List<RestaurantTagReviewViewModel> Restaurants { get; set; }
     }
 }

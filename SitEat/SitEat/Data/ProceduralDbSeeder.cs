@@ -146,7 +146,7 @@ namespace SitEat.Data
                     int closingHour = isWeekend ? 23 : 21;
                     for (int hour = openingHour; hour <= closingHour; hour++)
                     {
-                        if (random.NextDouble() < 0.15 - (double)deltaDay*0.01)
+                        if (random.NextDouble() < 0.15 - (double)deltaDay * 0.01)
                         {
                             var booking = new Booking
                             {
@@ -207,7 +207,7 @@ namespace SitEat.Data
                         }
                     }
                 }
-                
+
             }
             if (newTables.Count > 0)
             {

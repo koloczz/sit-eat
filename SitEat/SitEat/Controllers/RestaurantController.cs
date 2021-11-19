@@ -5,7 +5,6 @@ using SitEat.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SitEat.Controllers
 {
@@ -103,7 +102,7 @@ namespace SitEat.Controllers
                         tableInfo.PositionY = y;
                         var bookings = table.Bookings.ToArray();
                         tableInfo.IsBooked = table.Bookings.Any(b => b.Date == restaurantDetails.FilterDate && b.TimeStart == restaurantDetails.FilterHour);
-                        
+
                     }
                     else
                     {

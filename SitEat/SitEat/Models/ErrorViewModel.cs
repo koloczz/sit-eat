@@ -1,5 +1,3 @@
-using System;
-
 namespace SitEat.Models
 {
     public class ErrorViewModel
